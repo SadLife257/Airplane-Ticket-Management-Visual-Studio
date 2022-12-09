@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="94f717893f14427db8cfcf048b3c4061" Name="Diagram1">
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.Chuyến_bay" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.Dịch_vụ" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.Khách" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.Loại_vé" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.Sân_bay" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QuanLyVeMayBayModel.Vé" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="QuanLyVeMayBayModel.FK__Chuyê_n_b__Ma__s__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyVeMayBayModel.FK__Chuyê_n_b__Ma__s__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyVeMayBayModel.FK__Ve___Ma__chuyê_n__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyVeMayBayModel.FK__Loa_i_ve___Ma__d__2E1BDC42" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyVeMayBayModel.FK__Ve___Ma__kha_ch__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="QuanLyVeMayBayModel.FK__Ve___Ma__loa_i_v__31EC6D26" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

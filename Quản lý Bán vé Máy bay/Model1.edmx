@@ -1,0 +1,478 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QuanLyVeMayBayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Chuyến_bay">
+          <Key>
+            <PropertyRef Name="Mã_chuyến_bay" />
+          </Key>
+          <Property Name="Mã_chuyến_bay" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Loại_máy_bay" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Số_lượng_chổ_ngồi" Type="int" Nullable="false" />
+          <Property Name="Giờ_khởi_hành" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Ngày_khởi_hành" Type="date" Nullable="false" />
+          <Property Name="Mã_sân_bay_đi" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Mã_sân_bay_đến" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Dịch_vụ">
+          <Key>
+            <PropertyRef Name="Mã_dịch_vụ" />
+          </Key>
+          <Property Name="Mã_dịch_vụ" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Tên_dịch_vụ" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Trị_giá_thức_ăn" Type="int" Nullable="false" />
+          <Property Name="Trị_giá_thức_uống" Type="int" Nullable="false" />
+          <Property Name="Trị_giá_dịch_vụ_khác" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Khách">
+          <Key>
+            <PropertyRef Name="Mã_khách" />
+          </Key>
+          <Property Name="Mã_khách" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Tên_khách" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Số_CMND" Type="char" MaxLength="11" Nullable="false" />
+          <Property Name="Số_điện_thoại" Type="char" MaxLength="11" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Loại_vé">
+          <Key>
+            <PropertyRef Name="Mã_loại_vé" />
+          </Key>
+          <Property Name="Mã_loại_vé" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Tên_loại_vé" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Giá_tiền" Type="int" Nullable="false" />
+          <Property Name="Mã_dịch_vụ" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sân_bay">
+          <Key>
+            <PropertyRef Name="Mã_sân_bay" />
+          </Key>
+          <Property Name="Mã_sân_bay" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Tên_sân_bay" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Tỉnh_Thành_phố" Type="nvarchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Vé">
+          <Key>
+            <PropertyRef Name="Số_vé" />
+          </Key>
+          <Property Name="Số_vé" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Ngày_đặt_vé" Type="date" Nullable="false" />
+          <Property Name="Ngày_nhận_vé" Type="date" Nullable="false" />
+          <Property Name="Mã_chuyến_bay" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Mã_loại_vé" Type="char" MaxLength="10" Nullable="false" />
+          <Property Name="Mã_khách" Type="char" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Chuyến_b__Mã_s__2A4B4B5E">
+          <End Role="Sân_bay" Type="Self.Sân_bay" Multiplicity="1" />
+          <End Role="Chuyến_bay" Type="Self.Chuyến_bay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sân_bay">
+              <PropertyRef Name="Mã_sân_bay" />
+            </Principal>
+            <Dependent Role="Chuyến_bay">
+              <PropertyRef Name="Mã_sân_bay_đi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chuyến_b__Mã_s__2B3F6F97">
+          <End Role="Sân_bay" Type="Self.Sân_bay" Multiplicity="1" />
+          <End Role="Chuyến_bay" Type="Self.Chuyến_bay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sân_bay">
+              <PropertyRef Name="Mã_sân_bay" />
+            </Principal>
+            <Dependent Role="Chuyến_bay">
+              <PropertyRef Name="Mã_sân_bay_đến" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Loại_vé__Mã_d__2E1BDC42">
+          <End Role="Dịch_vụ" Type="Self.Dịch_vụ" Multiplicity="1" />
+          <End Role="Loại_vé" Type="Self.Loại_vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Dịch_vụ">
+              <PropertyRef Name="Mã_dịch_vụ" />
+            </Principal>
+            <Dependent Role="Loại_vé">
+              <PropertyRef Name="Mã_dịch_vụ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vé__Mã_chuyến__30F848ED">
+          <End Role="Chuyến_bay" Type="Self.Chuyến_bay" Multiplicity="1" />
+          <End Role="Vé" Type="Self.Vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chuyến_bay">
+              <PropertyRef Name="Mã_chuyến_bay" />
+            </Principal>
+            <Dependent Role="Vé">
+              <PropertyRef Name="Mã_chuyến_bay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vé__Mã_khách__32E0915F">
+          <End Role="Khách" Type="Self.Khách" Multiplicity="1" />
+          <End Role="Vé" Type="Self.Vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Khách">
+              <PropertyRef Name="Mã_khách" />
+            </Principal>
+            <Dependent Role="Vé">
+              <PropertyRef Name="Mã_khách" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Vé__Mã_loại_v__31EC6D26">
+          <End Role="Loại_vé" Type="Self.Loại_vé" Multiplicity="1" />
+          <End Role="Vé" Type="Self.Vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loại_vé">
+              <PropertyRef Name="Mã_loại_vé" />
+            </Principal>
+            <Dependent Role="Vé">
+              <PropertyRef Name="Mã_loại_vé" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyVeMayBayModelStoreContainer">
+          <EntitySet Name="Chuyến_bay" EntityType="Self.Chuyến_bay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dịch_vụ" EntityType="Self.Dịch_vụ" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Khách" EntityType="Self.Khách" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Loại_vé" EntityType="Self.Loại_vé" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sân_bay" EntityType="Self.Sân_bay" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vé" EntityType="Self.Vé" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Chuyến_b__Mã_s__2A4B4B5E" Association="Self.FK__Chuyến_b__Mã_s__2A4B4B5E">
+            <End Role="Sân_bay" EntitySet="Sân_bay" />
+            <End Role="Chuyến_bay" EntitySet="Chuyến_bay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chuyến_b__Mã_s__2B3F6F97" Association="Self.FK__Chuyến_b__Mã_s__2B3F6F97">
+            <End Role="Sân_bay" EntitySet="Sân_bay" />
+            <End Role="Chuyến_bay" EntitySet="Chuyến_bay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Loại_vé__Mã_d__2E1BDC42" Association="Self.FK__Loại_vé__Mã_d__2E1BDC42">
+            <End Role="Dịch_vụ" EntitySet="Dịch_vụ" />
+            <End Role="Loại_vé" EntitySet="Loại_vé" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vé__Mã_chuyến__30F848ED" Association="Self.FK__Vé__Mã_chuyến__30F848ED">
+            <End Role="Chuyến_bay" EntitySet="Chuyến_bay" />
+            <End Role="Vé" EntitySet="Vé" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vé__Mã_khách__32E0915F" Association="Self.FK__Vé__Mã_khách__32E0915F">
+            <End Role="Khách" EntitySet="Khách" />
+            <End Role="Vé" EntitySet="Vé" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Vé__Mã_loại_v__31EC6D26" Association="Self.FK__Vé__Mã_loại_v__31EC6D26">
+            <End Role="Loại_vé" EntitySet="Loại_vé" />
+            <End Role="Vé" EntitySet="Vé" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QuanLyVeMayBayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Chuyến_bay">
+          <Key>
+            <PropertyRef Name="Mã_chuyến_bay" />
+          </Key>
+          <Property Name="Mã_chuyến_bay" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Loại_máy_bay" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Số_lượng_chỗ_ngồi" Type="Int32" Nullable="false" />
+          <Property Name="Giờ_khởi_hành" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Ngày_khởi_hành" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Mã_sân_bay_đi" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Mã_sân_bay_đến" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Sân_bay" Relationship="Self.FK__Chuyê_n_b__Ma__s__2A4B4B5E" FromRole="Chuyê_n_bay" ToRole="Sân_bay" />
+          <NavigationProperty Name="Sân_bay1" Relationship="Self.FK__Chuyê_n_b__Ma__s__2B3F6F97" FromRole="Chuyê_n_bay" ToRole="Sân_bay" />
+          <NavigationProperty Name="Vé" Relationship="Self.FK__Ve___Ma__chuyê_n__30F848ED" FromRole="Chuyê_n_bay" ToRole="Ve_" />
+        </EntityType>
+        <EntityType Name="Dịch_vụ">
+          <Key>
+            <PropertyRef Name="Mã_dịch_vụ" />
+          </Key>
+          <Property Name="Mã_dịch_vụ" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Tên_dịch_vụ" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Trị_giá_thức_ăn" Type="Int32" Nullable="false" />
+          <Property Name="Trị_giá_thức_uống" Type="Int32" Nullable="false" />
+          <Property Name="Trị_giá_dịch_vụ_khác" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Loại_vé" Relationship="Self.FK__Loa_i_ve___Ma__d__2E1BDC42" FromRole="Di_ch_vu_" ToRole="Loa_i_ve_" />
+        </EntityType>
+        <EntityType Name="Khách">
+          <Key>
+            <PropertyRef Name="Mã_khách" />
+          </Key>
+          <Property Name="Mã_khách" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Tên_khách" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Số_CMND" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Số_điện_thoại" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Vé" Relationship="Self.FK__Ve___Ma__kha_ch__32E0915F" FromRole="Kha_ch" ToRole="Ve_" />
+        </EntityType>
+        <EntityType Name="Loại_vé">
+          <Key>
+            <PropertyRef Name="Mã_loại_vé" />
+          </Key>
+          <Property Name="Mã_loại_vé" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Tên_loại_vé" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Giá_tiền" Type="Int32" Nullable="false" />
+          <Property Name="Mã_dịch_vụ" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Dịch_vụ" Relationship="Self.FK__Loa_i_ve___Ma__d__2E1BDC42" FromRole="Loa_i_ve_" ToRole="Di_ch_vu_" />
+          <NavigationProperty Name="Vé" Relationship="Self.FK__Ve___Ma__loa_i_v__31EC6D26" FromRole="Loa_i_ve_" ToRole="Ve_" />
+        </EntityType>
+        <EntityType Name="Sân_bay">
+          <Key>
+            <PropertyRef Name="Mã_sân_bay" />
+          </Key>
+          <Property Name="Mã_sân_bay" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Tên_sân_bay" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Tỉnh_Thành_phố" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Chuyến_bay" Relationship="Self.FK__Chuyê_n_b__Ma__s__2A4B4B5E" FromRole="Sân_bay" ToRole="Chuyê_n_bay" />
+          <NavigationProperty Name="Chuyến_bay1" Relationship="Self.FK__Chuyê_n_b__Ma__s__2B3F6F97" FromRole="Sân_bay" ToRole="Chuyê_n_bay" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Vé">
+          <Key>
+            <PropertyRef Name="Số_vé" />
+          </Key>
+          <Property Name="Số_vé" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Ngày_đặt_vé" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Ngày_nhận_vé" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Mã_chuyến_bay" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Mã_loại_vé" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Mã_khách" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Chuyến_bay" Relationship="Self.FK__Ve___Ma__chuyê_n__30F848ED" FromRole="Ve_" ToRole="Chuyê_n_bay" />
+          <NavigationProperty Name="Khách" Relationship="Self.FK__Ve___Ma__kha_ch__32E0915F" FromRole="Ve_" ToRole="Kha_ch" />
+          <NavigationProperty Name="Loại_vé" Relationship="Self.FK__Ve___Ma__loa_i_v__31EC6D26" FromRole="Ve_" ToRole="Loa_i_ve_" />
+        </EntityType>
+        <Association Name="FK__Chuyê_n_b__Ma__s__2A4B4B5E">
+          <End Role="Sân_bay" Type="Self.Sân_bay" Multiplicity="1" />
+          <End Role="Chuyê_n_bay" Type="QuanLyVeMayBayModel.Chuyến_bay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sân_bay">
+              <PropertyRef Name="Mã_sân_bay" />
+            </Principal>
+            <Dependent Role="Chuyê_n_bay">
+              <PropertyRef Name="Mã_sân_bay_đi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Chuyê_n_b__Ma__s__2B3F6F97">
+          <End Role="Sân_bay" Type="Self.Sân_bay" Multiplicity="1" />
+          <End Role="Chuyê_n_bay" Type="QuanLyVeMayBayModel.Chuyến_bay" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sân_bay">
+              <PropertyRef Name="Mã_sân_bay" />
+            </Principal>
+            <Dependent Role="Chuyê_n_bay">
+              <PropertyRef Name="Mã_sân_bay_đến" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ve___Ma__chuyê_n__30F848ED">
+          <End Role="Chuyê_n_bay" Type="QuanLyVeMayBayModel.Chuyến_bay" Multiplicity="1" />
+          <End Role="Ve_" Type="QuanLyVeMayBayModel.Vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Chuyê_n_bay">
+              <PropertyRef Name="Mã_chuyến_bay" />
+            </Principal>
+            <Dependent Role="Ve_">
+              <PropertyRef Name="Mã_chuyến_bay" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Loa_i_ve___Ma__d__2E1BDC42">
+          <End Role="Di_ch_vu_" Type="QuanLyVeMayBayModel.Dịch_vụ" Multiplicity="1" />
+          <End Role="Loa_i_ve_" Type="QuanLyVeMayBayModel.Loại_vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Di_ch_vu_">
+              <PropertyRef Name="Mã_dịch_vụ" />
+            </Principal>
+            <Dependent Role="Loa_i_ve_">
+              <PropertyRef Name="Mã_dịch_vụ" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ve___Ma__kha_ch__32E0915F">
+          <End Role="Kha_ch" Type="QuanLyVeMayBayModel.Khách" Multiplicity="1" />
+          <End Role="Ve_" Type="QuanLyVeMayBayModel.Vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kha_ch">
+              <PropertyRef Name="Mã_khách" />
+            </Principal>
+            <Dependent Role="Ve_">
+              <PropertyRef Name="Mã_khách" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Ve___Ma__loa_i_v__31EC6D26">
+          <End Role="Loa_i_ve_" Type="QuanLyVeMayBayModel.Loại_vé" Multiplicity="1" />
+          <End Role="Ve_" Type="QuanLyVeMayBayModel.Vé" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Loa_i_ve_">
+              <PropertyRef Name="Mã_loại_vé" />
+            </Principal>
+            <Dependent Role="Ve_">
+              <PropertyRef Name="Mã_loại_vé" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QuanLyVeMayBayEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Chuyến_bay" EntityType="QuanLyVeMayBayModel.Chuyến_bay" />
+          <EntitySet Name="Di_ch_vu_" EntityType="QuanLyVeMayBayModel.Dịch_vụ" />
+          <EntitySet Name="Khách" EntityType="QuanLyVeMayBayModel.Khách" />
+          <EntitySet Name="Loa_i_ve_" EntityType="QuanLyVeMayBayModel.Loại_vé" />
+          <EntitySet Name="Sân_bay" EntityType="Self.Sân_bay" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="Ve_" EntityType="QuanLyVeMayBayModel.Vé" />
+          <AssociationSet Name="FK__Chuyê_n_b__Ma__s__2A4B4B5E" Association="Self.FK__Chuyê_n_b__Ma__s__2A4B4B5E">
+            <End Role="Sân_bay" EntitySet="Sân_bay" />
+            <End Role="Chuyê_n_bay" EntitySet="Chuyến_bay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Chuyê_n_b__Ma__s__2B3F6F97" Association="Self.FK__Chuyê_n_b__Ma__s__2B3F6F97">
+            <End Role="Sân_bay" EntitySet="Sân_bay" />
+            <End Role="Chuyê_n_bay" EntitySet="Chuyến_bay" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ve___Ma__chuyê_n__30F848ED" Association="Self.FK__Ve___Ma__chuyê_n__30F848ED">
+            <End Role="Chuyê_n_bay" EntitySet="Chuyến_bay" />
+            <End Role="Ve_" EntitySet="Ve_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Loa_i_ve___Ma__d__2E1BDC42" Association="Self.FK__Loa_i_ve___Ma__d__2E1BDC42">
+            <End Role="Di_ch_vu_" EntitySet="Di_ch_vu_" />
+            <End Role="Loa_i_ve_" EntitySet="Loa_i_ve_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ve___Ma__kha_ch__32E0915F" Association="Self.FK__Ve___Ma__kha_ch__32E0915F">
+            <End Role="Kha_ch" EntitySet="Khách" />
+            <End Role="Ve_" EntitySet="Ve_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Ve___Ma__loa_i_v__31EC6D26" Association="Self.FK__Ve___Ma__loa_i_v__31EC6D26">
+            <End Role="Loa_i_ve_" EntitySet="Loa_i_ve_" />
+            <End Role="Ve_" EntitySet="Ve_" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QuanLyVeMayBayModelStoreContainer" CdmEntityContainer="QuanLyVeMayBayEntities">
+          <EntitySetMapping Name="Chuyến_bay">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Chuyến_bay">
+              <MappingFragment StoreEntitySet="Chuyến_bay">
+                <ScalarProperty Name="Mã_chuyến_bay" ColumnName="Mã_chuyến_bay" />
+                <ScalarProperty Name="Loại_máy_bay" ColumnName="Loại_máy_bay" />
+                <ScalarProperty Name="Số_lượng_chỗ_ngồi" ColumnName="Số_lượng_chổ_ngồi" />
+                <ScalarProperty Name="Giờ_khởi_hành" ColumnName="Giờ_khởi_hành" />
+                <ScalarProperty Name="Ngày_khởi_hành" ColumnName="Ngày_khởi_hành" />
+                <ScalarProperty Name="Mã_sân_bay_đi" ColumnName="Mã_sân_bay_đi" />
+                <ScalarProperty Name="Mã_sân_bay_đến" ColumnName="Mã_sân_bay_đến" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Di_ch_vu_">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Dịch_vụ">
+              <MappingFragment StoreEntitySet="Dịch_vụ">
+                <ScalarProperty Name="Mã_dịch_vụ" ColumnName="Mã_dịch_vụ" />
+                <ScalarProperty Name="Tên_dịch_vụ" ColumnName="Tên_dịch_vụ" />
+                <ScalarProperty Name="Trị_giá_thức_ăn" ColumnName="Trị_giá_thức_ăn" />
+                <ScalarProperty Name="Trị_giá_thức_uống" ColumnName="Trị_giá_thức_uống" />
+                <ScalarProperty Name="Trị_giá_dịch_vụ_khác" ColumnName="Trị_giá_dịch_vụ_khác" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Khách">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Khách">
+              <MappingFragment StoreEntitySet="Khách">
+                <ScalarProperty Name="Mã_khách" ColumnName="Mã_khách" />
+                <ScalarProperty Name="Tên_khách" ColumnName="Tên_khách" />
+                <ScalarProperty Name="Số_CMND" ColumnName="Số_CMND" />
+                <ScalarProperty Name="Số_điện_thoại" ColumnName="Số_điện_thoại" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Loa_i_ve_">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Loại_vé">
+              <MappingFragment StoreEntitySet="Loại_vé">
+                <ScalarProperty Name="Mã_loại_vé" ColumnName="Mã_loại_vé" />
+                <ScalarProperty Name="Tên_loại_vé" ColumnName="Tên_loại_vé" />
+                <ScalarProperty Name="Giá_tiền" ColumnName="Giá_tiền" />
+                <ScalarProperty Name="Mã_dịch_vụ" ColumnName="Mã_dịch_vụ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sân_bay">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Sân_bay">
+              <MappingFragment StoreEntitySet="Sân_bay">
+                <ScalarProperty Name="Mã_sân_bay" ColumnName="Mã_sân_bay" />
+                <ScalarProperty Name="Tên_sân_bay" ColumnName="Tên_sân_bay" />
+                <ScalarProperty Name="Tỉnh_Thành_phố" ColumnName="Tỉnh_Thành_phố" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ve_">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Vé">
+              <MappingFragment StoreEntitySet="Vé">
+                <ScalarProperty Name="Số_vé" ColumnName="Số_vé" />
+                <ScalarProperty Name="Ngày_đặt_vé" ColumnName="Ngày_đặt_vé" />
+                <ScalarProperty Name="Ngày_nhận_vé" ColumnName="Ngày_nhận_vé" />
+                <ScalarProperty Name="Mã_chuyến_bay" ColumnName="Mã_chuyến_bay" />
+                <ScalarProperty Name="Mã_loại_vé" ColumnName="Mã_loại_vé" />
+                <ScalarProperty Name="Mã_khách" ColumnName="Mã_khách" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
