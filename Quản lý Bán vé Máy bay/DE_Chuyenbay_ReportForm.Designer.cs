@@ -216,16 +216,22 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // btnTaoReport
             // 
             this.btnTaoReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTaoReport.Location = new System.Drawing.Point(831, 475);
+            this.btnTaoReport.BackColor = System.Drawing.SystemColors.Window;
+            this.btnTaoReport.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnTaoReport.Location = new System.Drawing.Point(279, 470);
             this.btnTaoReport.Name = "btnTaoReport";
-            this.btnTaoReport.Size = new System.Drawing.Size(100, 30);
+            this.btnTaoReport.Size = new System.Drawing.Size(387, 35);
             this.btnTaoReport.TabIndex = 1;
-            this.btnTaoReport.Text = "Tạo Report";
-            this.btnTaoReport.UseVisualStyleBackColor = true;
+            this.btnTaoReport.Text = "TẠO REPORT";
+            this.btnTaoReport.UseVisualStyleBackColor = false;
             this.btnTaoReport.Click += new System.EventHandler(this.btnTaoReport_Click);
             // 
             // DE_Chuyenbay_ReportForm
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
+            this.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
+            this.Appearance.Options.UseBackColor = true;
+            this.Appearance.Options.UseForeColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(943, 517);

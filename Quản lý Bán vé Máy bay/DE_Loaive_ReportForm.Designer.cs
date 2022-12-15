@@ -85,6 +85,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // colMã_loại_vé
             // 
+            this.colMã_loại_vé.AppearanceCell.Options.UseTextOptions = true;
+            this.colMã_loại_vé.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMã_loại_vé.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMã_loại_vé.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMã_loại_vé.Caption = "MÃ LOẠI VÉ";
             this.colMã_loại_vé.FieldName = "Mã_loại_vé";
             this.colMã_loại_vé.MinWidth = 67;
             this.colMã_loại_vé.Name = "colMã_loại_vé";
@@ -94,6 +99,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // colTên_loại_vé
             // 
+            this.colTên_loại_vé.AppearanceCell.Options.UseTextOptions = true;
+            this.colTên_loại_vé.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTên_loại_vé.AppearanceHeader.Options.UseTextOptions = true;
+            this.colTên_loại_vé.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colTên_loại_vé.Caption = "TÊN LOẠI VÉ";
             this.colTên_loại_vé.FieldName = "Tên_loại_vé";
             this.colTên_loại_vé.MinWidth = 67;
             this.colTên_loại_vé.Name = "colTên_loại_vé";
@@ -103,6 +113,13 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // colGiá_tiền
             // 
+            this.colGiá_tiền.AppearanceCell.Options.UseTextOptions = true;
+            this.colGiá_tiền.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGiá_tiền.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGiá_tiền.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGiá_tiền.Caption = "GIÁ TIỀN";
+            this.colGiá_tiền.DisplayFormat.FormatString = "{0:###,###,###.000 VNĐ}";
+            this.colGiá_tiền.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGiá_tiền.FieldName = "Giá_tiền";
             this.colGiá_tiền.MinWidth = 67;
             this.colGiá_tiền.Name = "colGiá_tiền";
@@ -112,6 +129,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // colMã_dịch_vụ
             // 
+            this.colMã_dịch_vụ.AppearanceCell.Options.UseTextOptions = true;
+            this.colMã_dịch_vụ.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMã_dịch_vụ.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMã_dịch_vụ.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMã_dịch_vụ.Caption = "TÊN DỊCH VỤ";
             this.colMã_dịch_vụ.ColumnEdit = this.repositoryItemGridLookUpEdit1;
             this.colMã_dịch_vụ.FieldName = "Mã_dịch_vụ";
             this.colMã_dịch_vụ.MinWidth = 67;
@@ -146,17 +168,23 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // btnTaoReport
             // 
-            this.btnTaoReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTaoReport.Location = new System.Drawing.Point(829, 500);
+            this.btnTaoReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTaoReport.BackColor = System.Drawing.SystemColors.Window;
+            this.btnTaoReport.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnTaoReport.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnTaoReport.Location = new System.Drawing.Point(277, 486);
             this.btnTaoReport.Name = "btnTaoReport";
-            this.btnTaoReport.Size = new System.Drawing.Size(100, 30);
+            this.btnTaoReport.Size = new System.Drawing.Size(387, 35);
             this.btnTaoReport.TabIndex = 2;
-            this.btnTaoReport.Text = "Tạo Report";
-            this.btnTaoReport.UseVisualStyleBackColor = true;
+            this.btnTaoReport.Text = "TẠO REPORT";
+            this.btnTaoReport.UseVisualStyleBackColor = false;
             this.btnTaoReport.Click += new System.EventHandler(this.btnTaoReport_Click);
             // 
             // DE_Loaive_ReportForm
             // 
+            this.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
+            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 542);

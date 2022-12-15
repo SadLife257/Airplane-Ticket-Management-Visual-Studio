@@ -101,7 +101,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
         private void btnReportKhachhang_Click(object sender, EventArgs e)
         {
-            OpenForm(new DE_Khach_ReportForm());
+            OpenForm(new DE_Khach_ReportForm_2());
         }
 
         private void btnReportLoaive_Click(object sender, EventArgs e)

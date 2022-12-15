@@ -31,6 +31,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelFunctionSubMenu = new System.Windows.Forms.Panel();
+            this.btnReportChuyenbay = new System.Windows.Forms.Button();
+            this.btnReportLoaive = new System.Windows.Forms.Button();
+            this.btnReportKhachhang = new System.Windows.Forms.Button();
             this.btnContact = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.btnBaocao = new System.Windows.Forms.Button();
@@ -51,16 +55,12 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseFrame = new System.Windows.Forms.Button();
             this.labelFrameTitlte = new System.Windows.Forms.Label();
-            this.panelFunctionSubMenu = new System.Windows.Forms.Panel();
-            this.btnReportKhachhang = new System.Windows.Forms.Button();
-            this.btnReportLoaive = new System.Windows.Forms.Button();
-            this.btnReportChuyenbay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panelFunctionSubMenu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTitleFrame.SuspendLayout();
-            this.panelFunctionSubMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,6 +82,60 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(220, 874);
             this.panel1.TabIndex = 0;
+            // 
+            // panelFunctionSubMenu
+            // 
+            this.panelFunctionSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(78)))), ((int)(((byte)(104)))));
+            this.panelFunctionSubMenu.Controls.Add(this.btnReportChuyenbay);
+            this.panelFunctionSubMenu.Controls.Add(this.btnReportLoaive);
+            this.panelFunctionSubMenu.Controls.Add(this.btnReportKhachhang);
+            this.panelFunctionSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelFunctionSubMenu.Location = new System.Drawing.Point(0, 569);
+            this.panelFunctionSubMenu.Name = "panelFunctionSubMenu";
+            this.panelFunctionSubMenu.Size = new System.Drawing.Size(220, 135);
+            this.panelFunctionSubMenu.TabIndex = 0;
+            // 
+            // btnReportChuyenbay
+            // 
+            this.btnReportChuyenbay.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportChuyenbay.FlatAppearance.BorderSize = 0;
+            this.btnReportChuyenbay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportChuyenbay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnReportChuyenbay.Location = new System.Drawing.Point(0, 90);
+            this.btnReportChuyenbay.Name = "btnReportChuyenbay";
+            this.btnReportChuyenbay.Size = new System.Drawing.Size(220, 45);
+            this.btnReportChuyenbay.TabIndex = 2;
+            this.btnReportChuyenbay.Text = "Chuyến bay";
+            this.btnReportChuyenbay.UseVisualStyleBackColor = true;
+            this.btnReportChuyenbay.Click += new System.EventHandler(this.btnReportChuyenbay_Click);
+            // 
+            // btnReportLoaive
+            // 
+            this.btnReportLoaive.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportLoaive.FlatAppearance.BorderSize = 0;
+            this.btnReportLoaive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportLoaive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnReportLoaive.Location = new System.Drawing.Point(0, 45);
+            this.btnReportLoaive.Name = "btnReportLoaive";
+            this.btnReportLoaive.Size = new System.Drawing.Size(220, 45);
+            this.btnReportLoaive.TabIndex = 1;
+            this.btnReportLoaive.Text = "Loại vé";
+            this.btnReportLoaive.UseVisualStyleBackColor = true;
+            this.btnReportLoaive.Click += new System.EventHandler(this.btnReportLoaive_Click);
+            // 
+            // btnReportKhachhang
+            // 
+            this.btnReportKhachhang.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportKhachhang.FlatAppearance.BorderSize = 0;
+            this.btnReportKhachhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportKhachhang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnReportKhachhang.Location = new System.Drawing.Point(0, 0);
+            this.btnReportKhachhang.Name = "btnReportKhachhang";
+            this.btnReportKhachhang.Size = new System.Drawing.Size(220, 45);
+            this.btnReportKhachhang.TabIndex = 0;
+            this.btnReportKhachhang.Text = "Khách hàng";
+            this.btnReportKhachhang.UseVisualStyleBackColor = true;
+            this.btnReportKhachhang.Click += new System.EventHandler(this.btnReportKhachhang_Click);
             // 
             // btnContact
             // 
@@ -208,12 +262,13 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnChuyenbay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChuyenbay.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuyenbay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnChuyenbay.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnChuyenbay.Location = new System.Drawing.Point(0, 149);
             this.btnChuyenbay.Name = "btnChuyenbay";
             this.btnChuyenbay.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btnChuyenbay.Size = new System.Drawing.Size(220, 60);
             this.btnChuyenbay.TabIndex = 1;
-            this.btnChuyenbay.Text = "Chuyến bay";
+            this.btnChuyenbay.Text = "   Chuyến bay";
             this.btnChuyenbay.UseVisualStyleBackColor = true;
             this.btnChuyenbay.Click += new System.EventHandler(this.btnChuyenbay_Click);
             // 
@@ -358,60 +413,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.labelFrameTitlte.Text = "HOME";
             this.labelFrameTitlte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // panelFunctionSubMenu
-            // 
-            this.panelFunctionSubMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(78)))), ((int)(((byte)(104)))));
-            this.panelFunctionSubMenu.Controls.Add(this.btnReportChuyenbay);
-            this.panelFunctionSubMenu.Controls.Add(this.btnReportLoaive);
-            this.panelFunctionSubMenu.Controls.Add(this.btnReportKhachhang);
-            this.panelFunctionSubMenu.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelFunctionSubMenu.Location = new System.Drawing.Point(0, 569);
-            this.panelFunctionSubMenu.Name = "panelFunctionSubMenu";
-            this.panelFunctionSubMenu.Size = new System.Drawing.Size(220, 135);
-            this.panelFunctionSubMenu.TabIndex = 0;
-            // 
-            // btnReportKhachhang
-            // 
-            this.btnReportKhachhang.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportKhachhang.FlatAppearance.BorderSize = 0;
-            this.btnReportKhachhang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportKhachhang.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btnReportKhachhang.Location = new System.Drawing.Point(0, 0);
-            this.btnReportKhachhang.Name = "btnReportKhachhang";
-            this.btnReportKhachhang.Size = new System.Drawing.Size(220, 45);
-            this.btnReportKhachhang.TabIndex = 0;
-            this.btnReportKhachhang.Text = "Khách hàng";
-            this.btnReportKhachhang.UseVisualStyleBackColor = true;
-            this.btnReportKhachhang.Click += new System.EventHandler(this.btnReportKhachhang_Click);
-            // 
-            // btnReportLoaive
-            // 
-            this.btnReportLoaive.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportLoaive.FlatAppearance.BorderSize = 0;
-            this.btnReportLoaive.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportLoaive.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btnReportLoaive.Location = new System.Drawing.Point(0, 45);
-            this.btnReportLoaive.Name = "btnReportLoaive";
-            this.btnReportLoaive.Size = new System.Drawing.Size(220, 45);
-            this.btnReportLoaive.TabIndex = 1;
-            this.btnReportLoaive.Text = "Loại vé";
-            this.btnReportLoaive.UseVisualStyleBackColor = true;
-            this.btnReportLoaive.Click += new System.EventHandler(this.btnReportLoaive_Click);
-            // 
-            // btnReportChuyenbay
-            // 
-            this.btnReportChuyenbay.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportChuyenbay.FlatAppearance.BorderSize = 0;
-            this.btnReportChuyenbay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportChuyenbay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.btnReportChuyenbay.Location = new System.Drawing.Point(0, 90);
-            this.btnReportChuyenbay.Name = "btnReportChuyenbay";
-            this.btnReportChuyenbay.Size = new System.Drawing.Size(220, 45);
-            this.btnReportChuyenbay.TabIndex = 2;
-            this.btnReportChuyenbay.Text = "Chuyến bay";
-            this.btnReportChuyenbay.UseVisualStyleBackColor = true;
-            this.btnReportChuyenbay.Click += new System.EventHandler(this.btnReportChuyenbay_Click);
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -427,11 +428,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
+            this.panelFunctionSubMenu.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelTitleFrame.ResumeLayout(false);
-            this.panelFunctionSubMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

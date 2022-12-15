@@ -143,6 +143,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
             this.sqlDataSource2 = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
+            this.xrTableRow9 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell22 = new DevExpress.XtraReports.UI.XRTableCell();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.bindingSource3 = new System.Windows.Forms.BindingSource(this.components);
@@ -196,6 +198,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTable3.SizeF = new System.Drawing.SizeF(697.92F, 24F);
             this.xrTable3.StylePriority.UseBorders = false;
             this.xrTable3.StylePriority.UseFont = false;
+            this.xrTable3.StylePriority.UseTextAlignment = false;
+            this.xrTable3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
             // 
             // xrTableRow5
             // 
@@ -413,7 +417,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableRow2,
             this.xrTableRow3,
             this.xrTableRow4});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(697.92F, 72F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(697.92F, 122.9333F);
             // 
             // xrTableRow2
             // 
@@ -592,7 +596,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // xrTable5
             // 
             this.xrTable5.Dpi = 96F;
-            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(57.60004F, 95.6F);
+            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(59.60004F, 122.9333F);
             this.xrTable5.Name = "xrTable5";
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable5.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
@@ -640,8 +644,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1,
-            this.xrTableRow8});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(139.7715F, 48F);
+            this.xrTableRow8,
+            this.xrTableRow9});
+            this.xrTable1.SizeF = new System.Drawing.SizeF(139.7715F, 72F);
             // 
             // xrTableRow1
             // 
@@ -791,6 +796,26 @@ namespace Quản_lý_Bán_vé_Máy_bay
             selectQuery4});
             this.sqlDataSource2.ResultSchemaSerializable = resources.GetString("sqlDataSource2.ResultSchemaSerializable");
             // 
+            // xrTableRow9
+            // 
+            this.xrTableRow9.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell22});
+            this.xrTableRow9.Dpi = 96F;
+            this.xrTableRow9.Name = "xrTableRow9";
+            this.xrTableRow9.Weight = 1D;
+            // 
+            // xrTableCell22
+            // 
+            this.xrTableCell22.Dpi = 96F;
+            this.xrTableCell22.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrTableCell22.Multiline = true;
+            this.xrTableCell22.Name = "xrTableCell22";
+            this.xrTableCell22.StylePriority.UseFont = false;
+            this.xrTableCell22.StylePriority.UseTextAlignment = false;
+            this.xrTableCell22.Text = "52000632\r\nNguyễn Lê Gia Bảo";
+            this.xrTableCell22.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell22.Weight = 6D;
+            // 
             // bindingSource1
             // 
             this.bindingSource1.DataSource = typeof(Quản_lý_Bán_vé_Máy_bay.Chuyến_bay);
@@ -901,5 +926,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow8;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
         private DevExpress.DataAccess.Sql.SqlDataSource sqlDataSource2;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow9;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell22;
     }
 }

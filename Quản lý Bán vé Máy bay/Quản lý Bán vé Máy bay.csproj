@@ -141,6 +141,12 @@
     <Compile Include="DE_Khach_ReportForm.Designer.cs">
       <DependentUpon>DE_Khach_ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DE_Khach_ReportForm_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DE_Khach_ReportForm_2.Designer.cs">
+      <DependentUpon>DE_Khach_ReportForm_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="DE_Loaive_ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,12 @@
     <Compile Include="XtraReportChuyenBay.Designer.cs">
       <DependentUpon>XtraReportChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportKhachHang.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportKhachHang.Designer.cs">
+      <DependentUpon>XtraReportKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="XtraReportLoaiVe.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -295,6 +307,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DE_Khach_ReportForm.resx">
       <DependentUpon>DE_Khach_ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DE_Khach_ReportForm_2.resx">
+      <DependentUpon>DE_Khach_ReportForm_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DE_Loaive_ReportForm.resx">
       <DependentUpon>DE_Loaive_ReportForm.cs</DependentUpon>
@@ -364,6 +379,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportChuyenBay.resx">
       <DependentUpon>XtraReportChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportKhachHang.resx">
+      <DependentUpon>XtraReportKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportLoaiVe.resx">
       <DependentUpon>XtraReportLoaiVe.cs</DependentUpon>
@@ -435,6 +453,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="icon\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

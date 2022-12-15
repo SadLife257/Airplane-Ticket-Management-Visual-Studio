@@ -81,6 +81,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableCell2 = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrTableRow8 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell1 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableRow5 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quanLyVeMayBayDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable5)).BeginInit();
@@ -147,7 +149,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableCell14.Multiline = true;
             this.xrTableCell14.Name = "xrTableCell14";
             this.xrTableCell14.Text = "xrTableCell14";
-            this.xrTableCell14.Weight = 1.2737324058438784D;
+            this.xrTableCell14.Weight = 1.2799650053971445D;
             // 
             // xrTableCell8
             // 
@@ -156,7 +158,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableCell8.Multiline = true;
             this.xrTableCell8.Name = "xrTableCell8";
             this.xrTableCell8.Text = "xrTableCell8";
-            this.xrTableCell8.Weight = 0.88136402135345415D;
+            this.xrTableCell8.TextFormatString = "{0:###,###,###.000 VNĐ}";
+            this.xrTableCell8.Weight = 0.8751314218001881D;
             // 
             // xrTableCell9
             // 
@@ -229,12 +232,12 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // xrTable5
             // 
-            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(1.138941F, 99.58333F);
+            this.xrTable5.LocationFloat = new DevExpress.Utils.PointFloat(26.30554F, 123.8889F);
             this.xrTable5.Name = "xrTable5";
             this.xrTable5.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTable5.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow7});
-            this.xrTable5.SizeF = new System.Drawing.SizeF(728.7222F, 25F);
+            this.xrTable5.SizeF = new System.Drawing.SizeF(694.6945F, 25F);
             // 
             // xrTableRow7
             // 
@@ -271,7 +274,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableRow2,
             this.xrTableRow3,
             this.xrTableRow4});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(729.8611F, 75F);
+            this.xrTable2.SizeF = new System.Drawing.SizeF(729.8611F, 123.8889F);
             // 
             // xrTableRow2
             // 
@@ -332,12 +335,12 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTable4.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
             | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(1.138941F, 139.5833F);
+            this.xrTable4.LocationFloat = new DevExpress.Utils.PointFloat(1.138941F, 160.6944F);
             this.xrTable4.Name = "xrTable4";
             this.xrTable4.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTable4.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow6});
-            this.xrTable4.SizeF = new System.Drawing.SizeF(729.8611F, 38.88889F);
+            this.xrTable4.SizeF = new System.Drawing.SizeF(729.8612F, 27.77779F);
             this.xrTable4.StylePriority.UseBorders = false;
             // 
             // xrTableRow6
@@ -407,8 +410,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTable1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1,
-            this.xrTableRow8});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(145.5953F, 50F);
+            this.xrTableRow8,
+            this.xrTableRow5});
+            this.xrTable1.SizeF = new System.Drawing.SizeF(145.5953F, 75F);
             // 
             // xrTableRow1
             // 
@@ -445,6 +449,24 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.xrTableCell1.Text = "(Họ và tên)";
             this.xrTableCell1.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             this.xrTableCell1.Weight = 6D;
+            // 
+            // xrTableRow5
+            // 
+            this.xrTableRow5.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.xrTableCell3});
+            this.xrTableRow5.Name = "xrTableRow5";
+            this.xrTableRow5.Weight = 1D;
+            // 
+            // xrTableCell3
+            // 
+            this.xrTableCell3.Font = new System.Drawing.Font("Arial", 9.75F);
+            this.xrTableCell3.Multiline = true;
+            this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.StylePriority.UseFont = false;
+            this.xrTableCell3.StylePriority.UseTextAlignment = false;
+            this.xrTableCell3.Text = "52000632\r\nNguyễn Lê Gia Bảo";
+            this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.xrTableCell3.Weight = 6D;
             // 
             // XtraReportLoaiVe
             // 
@@ -517,5 +539,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell2;
         private DevExpress.XtraReports.UI.XRTableRow xrTableRow8;
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell1;
+        private DevExpress.XtraReports.UI.XRTableRow xrTableRow5;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
     }
 }
