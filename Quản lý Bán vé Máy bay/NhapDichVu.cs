@@ -24,7 +24,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             ShowData("");
             txtBoxMaDichVu.Text = IdentificationGeneration();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
+
         }
 
         private string IdentificationGeneration()
@@ -49,8 +50,19 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                dichVuData.DataSource = context.Dịch_vụ.ToList();
+                dichVuData.DataSource = context.Dịch_vụ
+                                               .OrderBy(e => e.Tên_dịch_vụ)
+                                                .ToList();
+
+                dichVuData.Columns["Mã_dịch_vụ"].HeaderText = "Mã dịch vụ";
+                dichVuData.Columns["Tên_dịch_vụ"].HeaderText = "Tên dịch vụ";
+                dichVuData.Columns["Trị_giá_thức_ăn"].HeaderText = "Trị giá thức ăn";
+                dichVuData.Columns["Trị_giá_thức_uống"].HeaderText = "Trị giá thức uống";
+                dichVuData.Columns["Trị_giá_dịch_vụ_khác"].HeaderText = "Trị giá dịch vụ khác";
+
                 dichVuData.Columns["Loại_vé"].Visible = false;
+
+                //dichVuData.Sort(dichVuData.Columns["Tên_dịch_vụ"], ListSortDirection.Descending);
             }
         }
 
@@ -100,7 +112,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     txtBoxTriGiaThucUong.Text = dichVuData.Rows[e.RowIndex].Cells["Trị_giá_thức_uống"].FormattedValue.ToString();
                     txtBoxTriGiaDichVuKhac.Text = dichVuData.Rows[e.RowIndex].Cells["Trị_giá_dịch_vụ_khác"].FormattedValue.ToString();
 
-                    menuItemDelete.Enabled = true;
+                    btnDelete.Enabled = true;
                     toggleAction = false;
                 }
             }
@@ -175,11 +187,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 context.SaveChanges();
             };
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
         }
 
-        private void menuItemSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (toggleAction)
             {
@@ -203,22 +215,15 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     ShowError();
                 }
             }
-            
+
             ShowData("");
             ClearInput();
             NhapDichVu_Load(sender, e);
             txtBoxMaDichVu.Focus();
         }
 
-        private void menuItemSearch_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            ShowData(txtBoxMaDichVu.Text);
-            ClearInput();
-        }
-
-        private void menuItemDelete_Click(object sender, EventArgs e)
-        {
-            //Still have to check for forgein key
             DialogResult dialog = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog == DialogResult.OK)
             {
@@ -239,26 +244,26 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                         context.SaveChanges();
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
                         MessageBox.Show("Data was referenced in another table", "Error",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 };
 
                 ShowData("");
                 ClearInput();
-                menuItemDelete.Enabled = false;
+                btnDelete.Enabled = false;
                 NhapDichVu_Load(sender, e);
                 txtBoxMaDichVu.Focus();
             }
         }
 
-        private void menuItemClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInput();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
             NhapDichVu_Load(sender, e);
             txtBoxMaDichVu.Focus();

@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors;
+using DevExpress.XtraReports.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,6 +24,14 @@ namespace Quản_lý_Bán_vé_Máy_bay
             QuanLyVeMayBayEntities db = new QuanLyVeMayBayEntities();
             loaiveBindingSource.DataSource = db.Loại_vé.ToList();
             dịchvụBindingSource.DataSource = db.Dịch_vụ.ToList();
+        }
+
+        private void btnTaoReport_Click(object sender, EventArgs e)
+        {
+            XtraReportLoaiVe report = new XtraReportLoaiVe();
+            report.CreateDocument();
+            ReportPrintTool review = new ReportPrintTool(report);
+            review.ShowPreview();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             ShowData("");
             khachID.Text = IdentificationGeneration();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
         }
 
         private string IdentificationGeneration()
@@ -49,9 +49,18 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                khachData.DataSource = context.Khách.ToList();
+                khachData.DataSource = context.Khách
+                                              .OrderByDescending(e => e.Tên_khách)
+                                              .ToList();
+
+                khachData.Columns["Mã_khách"].HeaderText = "Mã khách";
+                khachData.Columns["Tên_khách"].HeaderText = "Tên khách";
+                khachData.Columns["Số_CMND"].HeaderText = "Số CMND";
+                khachData.Columns["Số_điện_thoại"].HeaderText = "Số điện thoại";
 
                 khachData.Columns["Vé"].Visible = false;
+
+                //khachData.Sort(khachData.Columns["Tên_khách"], ListSortDirection.Descending);
             }
         }
 
@@ -72,7 +81,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 khachCMND.Text = khachData.Rows[e.RowIndex].Cells["Số_CMND"].FormattedValue.ToString().Trim();
                 khachPhone.Text = khachData.Rows[e.RowIndex].Cells["Số_điện_thoại"].FormattedValue.ToString().Trim();
 
-                menuItemDelete.Enabled = true;
+                btnDelete.Enabled = true;
                 toggleAction = false;
             }
         }
@@ -137,11 +146,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 context.SaveChanges();
             };
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
         }
 
-        private void menuItemSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (toggleAction)
             {
@@ -165,22 +174,15 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     ShowError();
                 }
             }
-            
+
             ShowData("");
             ClearInput();
             NhapKhach_Load(sender, e);
             khachName.Focus();
         }
 
-        private void menuItemSearch_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            ShowData(khachID.Text);
-            ClearInput();
-        }
-
-        private void menuItemDelete_Click(object sender, EventArgs e)
-        {
-            //Still have to check for forgein key
             DialogResult dialog = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog == DialogResult.OK)
             {
@@ -206,19 +208,19 @@ namespace Quản_lý_Bán_vé_Máy_bay
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 };
-                
+
                 ShowData("");
                 ClearInput();
-                menuItemDelete.Enabled = false;
+                btnDelete.Enabled = false;
                 NhapKhach_Load(sender, e);
                 khachName.Focus();
             }
         }
 
-        private void menuItemClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInput();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
             NhapKhach_Load(sender, e);
             khachName.Focus();

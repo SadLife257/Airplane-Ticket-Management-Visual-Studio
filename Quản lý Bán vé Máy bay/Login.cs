@@ -29,7 +29,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             if(txtBoxUsername.Text.Equals(USERNAME) && txtBoxPassword.Text.Equals(PASSWORD))
             {
-                new MainScreen().Show();
+                new Home().Show();
                 Hide();
             }
             else

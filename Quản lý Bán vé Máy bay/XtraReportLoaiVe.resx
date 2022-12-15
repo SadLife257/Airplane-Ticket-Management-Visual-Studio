@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="quanLyVeMayBayDataSet1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="chuyến_bayTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 65</value>
+  </metadata>
+  <metadata name="sqlDataSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 113</value>
+  </metadata>
+  <data name="sqlDataSource1.ResultSchemaSerializable" xml:space="preserve">
+    <value>PERhdGFTZXQgTmFtZT0ic3FsRGF0YVNvdXJjZTEiPjxWaWV3IE5hbWU9IkxvYcyjaV92ZcyBXzEiPjxGaWVsZCBOYW1lPSJNYcyDX2xvYcyjaV92ZcyBIiBUeXBlPSJTdHJpbmciIC8+PEZpZWxkIE5hbWU9IlTDqm5fbG9hzKNpX3ZlzIEiIFR5cGU9IlN0cmluZyIgLz48RmllbGQgTmFtZT0iR2lhzIFfdGnDqsyAbiIgVHlwZT0iSW50MzIiIC8+PEZpZWxkIE5hbWU9IlTDqm5fZGnMo2NoX3Z1zKMiIFR5cGU9IlN0cmluZyIgLz48L1ZpZXc+PC9EYXRhU2V0Pg==</value>
+  </data>
 </root>

@@ -32,14 +32,14 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private void NhapChuyenBay_Load(object sender, EventArgs e)
         {
             txtBoxMaChuyenBay.Text = IdentificationGeneration();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             
             using (var context = new QuanLyVeMayBayEntities())
             {
                 var query = context.Sân_bay
                                    .Select(sanBay => new 
                                    {
-                                       MaSanBay = sanBay.Mã_sân_bay
+                                       TenSanBay = sanBay.Tên_sân_bay
                                    })
                                    .ToList();
 
@@ -48,13 +48,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 foreach (var sanBay in query)
                 {
-                    comBoxMaSanBayDi.Items.Add(sanBay.MaSanBay.ToString());
-                    comBoxMaSanBayDen.Items.Add(sanBay.MaSanBay.ToString());
+                    comBoxMaSanBayDi.Items.Add(sanBay.TenSanBay.ToString());
+                    comBoxMaSanBayDen.Items.Add(sanBay.TenSanBay.ToString());
                 }
             };
-
-            labelTenSanbayDi.Visible = false;
-            labelTenSanbayDen.Visible = false;
 
             ShowData("");
         }
@@ -81,11 +78,31 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                chuyenBayData.DataSource = context.Chuyến_bay.ToList();
+                chuyenBayData.DataSource = context.Chuyến_bay
+                                                  .Select(e => new
+                                                  {
+                                                        Mã_chuyến_bay = e.Mã_chuyến_bay,
+                                                        Loại_máy_bay = e.Loại_máy_bay,
+                                                        Số_lượng_chỗ_ngồi = e.Số_lượng_chỗ_ngồi,
+                                                        Giờ_khởi_hành = e.Giờ_khởi_hành,
+                                                        Ngày_khởi_hành = e.Ngày_khởi_hành,
+                                                        Mã_sân_bay_đi = e.Sân_bay.Tên_sân_bay,
+                                                        Mã_sân_bay_đến = e.Sân_bay1.Tên_sân_bay
+                                                  })
+                                                  .OrderBy(e => new { e.Ngày_khởi_hành, e.Giờ_khởi_hành })
+                                                  .ToList();
 
-                chuyenBayData.Columns["Sân_bay"].Visible = false;
-                chuyenBayData.Columns["Sân_bay1"].Visible = false;
-                chuyenBayData.Columns["Vé"].Visible = false;
+                chuyenBayData.Columns["Mã_chuyến_bay"].HeaderText = "Mã chuyến bay";
+                chuyenBayData.Columns["Loại_máy_bay"].HeaderText = "Loại máy bay";
+                chuyenBayData.Columns["Số_lượng_chỗ_ngồi"].HeaderText = "Số lượng chỗ ngồi";
+                chuyenBayData.Columns["Giờ_khởi_hành"].HeaderText = "Giờ khởi hành";
+                chuyenBayData.Columns["Ngày_khởi_hành"].DefaultCellStyle.Format = "hh:mm";
+
+                chuyenBayData.Columns["Ngày_khởi_hành"].HeaderText = "Ngày khởi hành";
+                chuyenBayData.Columns["Ngày_khởi_hành"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+                chuyenBayData.Columns["Mã_sân_bay_đi"].HeaderText = "Tên sân bay đi";
+                chuyenBayData.Columns["Mã_sân_bay_đến"].HeaderText = "Tên sân bay đến";
             }
         }
 
@@ -98,44 +115,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
             comBoxMaSanBayDen.SelectedIndex = -1;
             dtPickerGioKhoiHanh.Value = DateTime.Now;
             dtPickerNgayKhoiHanh.Value = DateTime.Now;
-        }
-
-        private void comBoxMaSanBayDi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if(comBoxMaSanBayDi.SelectedIndex < 0)
-            {
-                labelTenSanbayDi.Visible = false;
-            }
-            else
-            {
-                labelTenSanbayDi.Visible = true;
-                using (var context = new QuanLyVeMayBayEntities())
-                {
-                    var query = context.Sân_bay
-                                       .First(sanBay => sanBay.Mã_sân_bay == comBoxMaSanBayDi.SelectedItem.ToString());
-
-                    labelTenSanbayDi.Text = query.Tên_sân_bay.ToString();
-                };
-            }
-        }
-
-        private void comBoxMaSanBayDen_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comBoxMaSanBayDen.SelectedIndex < 0)
-            {
-                labelTenSanbayDen.Visible = false;
-            }
-            else
-            {
-                labelTenSanbayDen.Visible = true;
-                using (var context = new QuanLyVeMayBayEntities())
-                {
-                    var query = context.Sân_bay
-                                       .First(sanBay => sanBay.Mã_sân_bay == comBoxMaSanBayDen.SelectedItem.ToString());
-
-                    labelTenSanbayDen.Text = query.Tên_sân_bay.ToString();
-                };
-            }
         }
 
         private void txtBoxSoChoNgoi_KeyPress(object sender, KeyPressEventArgs e)
@@ -155,11 +134,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 txtBoxLoaiMayBay.Text = chuyenBayData.Rows[e.RowIndex].Cells["Loại_máy_bay"].FormattedValue.ToString().Trim();
                 txtBoxSoChoNgoi.Text = chuyenBayData.Rows[e.RowIndex].Cells["Số_lượng_chỗ_ngồi"].FormattedValue.ToString().Trim();
                 dtPickerGioKhoiHanh.Value = DateTime.Parse(chuyenBayData.Rows[e.RowIndex].Cells["Giờ_khởi_hành"].FormattedValue.ToString().Trim());
-                dtPickerNgayKhoiHanh.Value = DateTime.Parse(chuyenBayData.Rows[e.RowIndex].Cells["Ngày_khởi_hành"].FormattedValue.ToString().Trim());
+                dtPickerNgayKhoiHanh.Value = DateTime.ParseExact(chuyenBayData.Rows[e.RowIndex].Cells["Ngày_khởi_hành"].FormattedValue.ToString().Trim(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 comBoxMaSanBayDi.SelectedIndex = comBoxMaSanBayDi.Items.IndexOf(chuyenBayData.Rows[e.RowIndex].Cells["Mã_sân_bay_đi"].FormattedValue.ToString());
                 comBoxMaSanBayDen.SelectedIndex = comBoxMaSanBayDen.Items.IndexOf(chuyenBayData.Rows[e.RowIndex].Cells["Mã_sân_bay_đến"].FormattedValue.ToString());
 
-                menuItemDelete.Enabled = true;
+                btnDelete.Enabled = true;
                 toggleAction = false;
             }
         }
@@ -234,15 +213,15 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 context.SaveChanges();
             };
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
         }
 
-        private void menuItemSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (toggleAction)
             {
-                if(CheckField())
+                if (CheckField())
                 {
                     InsertData();
                 }
@@ -268,15 +247,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             txtBoxLoaiMayBay.Focus();
         }
 
-        private void menuItemSearch_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            ShowData(txtBoxMaChuyenBay.Text);
-            ClearInput();
-        }
-
-        private void menuItemDelete_Click(object sender, EventArgs e)
-        {
-            //Still have to check for forgein key
             DialogResult dialog = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog == DialogResult.OK)
             {
@@ -305,19 +277,19 @@ namespace Quản_lý_Bán_vé_Máy_bay
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 };
-                
+
                 ShowData("");
                 ClearInput();
-                menuItemDelete.Enabled = false;
+                btnDelete.Enabled = false;
                 NhapChuyenBay_Load(sender, e);
                 txtBoxLoaiMayBay.Focus();
             }
         }
 
-        private void menuItemClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInput();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
             NhapChuyenBay_Load(sender, e);
             txtBoxLoaiMayBay.Focus();

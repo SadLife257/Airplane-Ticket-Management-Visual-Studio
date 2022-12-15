@@ -32,7 +32,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 comBoxTinhThanhPho.Items.Add(line);
             }
 
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             ShowData("");
         }
 
@@ -58,7 +58,13 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                sanBayData.DataSource = context.Sân_bay.ToList();
+                sanBayData.DataSource = context.Sân_bay
+                                               .OrderByDescending(e => e.Tên_sân_bay)
+                                                .ToList();
+
+                sanBayData.Columns["Mã_sân_bay"].HeaderText = "Mã sân bay";
+                sanBayData.Columns["Tên_sân_bay"].HeaderText = "Tên sân bay";
+                sanBayData.Columns["Tỉnh_Thành_phố"].HeaderText = "Tỉnh/Thành phố";
 
                 sanBayData.Columns["Chuyến_bay"].Visible = false;
                 sanBayData.Columns["Chuyến_bay1"].Visible = false;
@@ -83,7 +89,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     txtBoxTenSanBay.Text = sanBayData.Rows[e.RowIndex].Cells["Tên_sân_bay"].FormattedValue.ToString().Trim();
                     comBoxTinhThanhPho.SelectedIndex = comBoxTinhThanhPho.Items.IndexOf(sanBayData.Rows[e.RowIndex].Cells["Tỉnh_Thành_phố"].FormattedValue.ToString());
 
-                    menuItemDelete.Enabled = true;
+                    btnDelete.Enabled = true;
                     toggleAction = false;
                 }
             }
@@ -143,11 +149,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 context.SaveChanges();
             };
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
         }
 
-        private void menuItemSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (toggleAction)
             {
@@ -171,22 +177,15 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     ShowError();
                 }
             }
-            
+
             ShowData("");
             ClearInput();
             NhapSanBay_Load(sender, e);
             txtBoxTenSanBay.Focus();
         }
 
-        private void menuItemSearch_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            ShowData(txtBoxMaSanBay.Text);
-            ClearInput();
-        }
-
-        private void menuItemDelete_Click(object sender, EventArgs e)
-        {
-            //Still have to check for forgein key
             DialogResult dialog = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog == DialogResult.OK)
             {
@@ -207,23 +206,23 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     }
                     catch
                     {
-                            MessageBox.Show("Data was referenced in another table", "Error",
-                                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Data was referenced in another table", "Error",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 };
-                
+
                 ShowData("");
                 ClearInput();
-                menuItemDelete.Enabled = false;
+                btnDelete.Enabled = false;
                 NhapSanBay_Load(sender, e);
                 txtBoxTenSanBay.Focus();
             }
         }
 
-        private void menuItemClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInput();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
             NhapSanBay_Load(sender, e);
             txtBoxTenSanBay.Focus();

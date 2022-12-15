@@ -16,7 +16,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainScreen());
+            Application.Run(new Home());
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private void NhapVe_Load(object sender, EventArgs e)
         {
             txtBoxSoVe.Text = IdentificationGeneration();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
 
             comBoxMaChuyenBay.Items.Clear();
             comBoxMaLoaiVe.Items.Clear();
@@ -101,11 +101,36 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                veData.DataSource = context.Vé.ToList();
+                veData.DataSource = context.Vé
+                                           .Select(e => new
+                                           {
+                                               Số_vé = e.Số_vé,
+                                               Ngày_đặt_vé = e.Ngày_đặt_vé,
+                                               Ngày_nhận_vé = e.Ngày_nhận_vé,
+                                               Mã_chuyến_bay = e.Mã_chuyến_bay,
+                                               Mã_loại_vé = e.Loại_vé.Tên_loại_vé,
+                                               Mã_khách = e.Khách.Tên_khách
+                                           })
+                                           .OrderBy(e => e.Ngày_đặt_vé)
+                                           .ToList();
 
-                veData.Columns["Chuyến_bay"].Visible = false;
-                veData.Columns["Khách"].Visible = false;
-                veData.Columns["Loại_vé"].Visible = false;
+                veData.Columns["Số_vé"].HeaderText = "Số vé";
+
+                veData.Columns["Ngày_đặt_vé"].HeaderText = "Ngày đặt vé";
+                veData.Columns["Ngày_đặt_vé"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+                veData.Columns["Ngày_nhận_vé"].HeaderText = "Ngày nhận vé";
+                veData.Columns["Ngày_nhận_vé"].DefaultCellStyle.Format = "dd/MM/yyyy";
+
+                veData.Columns["Mã_chuyến_bay"].HeaderText = "Mã chuyến bay";
+                veData.Columns["Mã_loại_vé"].HeaderText = "Tên loại vé";
+                veData.Columns["Mã_khách"].HeaderText = "Tên khách";
+
+                //veData.Columns["Chuyến_bay"].Visible = false;
+                //veData.Columns["Khách"].Visible = false;
+                //veData.Columns["Loại_vé"].Visible = false;
+
+                //veData.Sort(veData.Columns["Ngày_đặt_vé"], ListSortDirection.Ascending);
             }
         }
 
@@ -123,13 +148,13 @@ namespace Quản_lý_Bán_vé_Máy_bay
             {
                 veData.CurrentRow.Selected = true;
                 txtBoxSoVe.Text = veData.Rows[e.RowIndex].Cells["Số_vé"].FormattedValue.ToString().Trim();
-                dtPickerNgayDatVe.Value = DateTime.Parse(veData.Rows[e.RowIndex].Cells["Ngày_đặt_vé"].FormattedValue.ToString());
-                dtPickerNgayNhanVe.Value = DateTime.Parse(veData.Rows[e.RowIndex].Cells["Ngày_nhận_vé"].FormattedValue.ToString());
+                dtPickerNgayDatVe.Value = DateTime.ParseExact(veData.Rows[e.RowIndex].Cells["Ngày_đặt_vé"].FormattedValue.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
+                dtPickerNgayNhanVe.Value = DateTime.ParseExact(veData.Rows[e.RowIndex].Cells["Ngày_nhận_vé"].FormattedValue.ToString(), "dd/MM/yyyy", System.Globalization.CultureInfo.InvariantCulture);
                 comBoxMaChuyenBay.SelectedIndex = comBoxMaChuyenBay.Items.IndexOf(veData.Rows[e.RowIndex].Cells["Mã_chuyến_bay"].FormattedValue.ToString());
                 comBoxMaLoaiVe.SelectedIndex = comBoxMaLoaiVe.Items.IndexOf(veData.Rows[e.RowIndex].Cells["Mã_loại_vé"].FormattedValue.ToString());
                 comBoxMaKhach.SelectedIndex = comBoxMaKhach.Items.IndexOf(veData.Rows[e.RowIndex].Cells["Mã_khách"].FormattedValue.ToString());
 
-                menuItemDelete.Enabled = true;
+                btnDelete.Enabled = true;
                 toggleAction = false;
             }
         }
@@ -198,11 +223,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 context.SaveChanges();
             };
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
         }
 
-        private void menuItemSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (toggleAction)
             {
@@ -226,22 +251,15 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     ShowError();
                 }
             }
-            
+
             ShowData("");
             ClearInput();
             NhapVe_Load(sender, e);
             dtPickerNgayDatVe.Focus();
         }
 
-        private void menuItemSearch_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            ShowData(txtBoxSoVe.Text);
-            ClearInput();
-        }
-
-        private void menuItemDelete_Click(object sender, EventArgs e)
-        {
-            //Still have to check for forgein key
             DialogResult dialog = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog == DialogResult.OK)
             {
@@ -261,19 +279,19 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                     context.SaveChanges();
                 };
-                
+
                 ShowData("");
                 ClearInput();
-                menuItemDelete.Enabled = false;
+                btnDelete.Enabled = false;
                 NhapVe_Load(sender, e);
                 dtPickerNgayDatVe.Focus();
             }
         }
 
-        private void menuItemClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInput();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
             NhapVe_Load(sender, e);
             dtPickerNgayDatVe.Focus();

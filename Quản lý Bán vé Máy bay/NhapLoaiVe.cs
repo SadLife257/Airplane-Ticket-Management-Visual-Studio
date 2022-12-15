@@ -24,7 +24,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private void NhapLoaiVe_Load(object sender, EventArgs e)
         {
             txtBoxMaLoaiVe.Text = IdentificationGeneration();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
 
             using (var context = new QuanLyVeMayBayEntities())
             {
@@ -68,10 +68,26 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                loaiVeData.DataSource = context.Loại_vé.ToList();
+                loaiVeData.DataSource = context.Loại_vé
+                                               .Select(e => new
+                                               {
+                                                   Mã_loại_vé = e.Mã_loại_vé,
+                                                   Tên_loại_vé = e.Tên_loại_vé,
+                                                   Giá_tiền = e.Giá_tiền,
+                                                   Mã_dịch_vụ = e.Dịch_vụ.Tên_dịch_vụ
+                                               })
+                                               .OrderBy(e => e.Tên_loại_vé)
+                                               .ToList();
 
-                loaiVeData.Columns["Dịch_vụ"].Visible = false;
-                loaiVeData.Columns["Vé"].Visible = false;
+                loaiVeData.Columns["Mã_loại_vé"].HeaderText = "Mã loại vé";
+                loaiVeData.Columns["Tên_loại_vé"].HeaderText = "Tên loại vé";
+                loaiVeData.Columns["Giá_tiền"].HeaderText = "Giá tiền";
+                loaiVeData.Columns["Mã_dịch_vụ"].HeaderText = "Tên dịch vụ";
+
+                //loaiVeData.Sort(loaiVeData.Columns["Tên_loại_vé"], ListSortDirection.Descending);
+
+                //loaiVeData.Columns["Dịch_vụ"].Visible = false;
+                //loaiVeData.Columns["Vé"].Visible = false;
             }
         }
 
@@ -102,7 +118,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 txtBoxGiaTien.Text = loaiVeData.Rows[e.RowIndex].Cells["Giá_tiền"].FormattedValue.ToString().Trim();
                 comBoxMaDichVu.SelectedIndex = comBoxMaDichVu.Items.IndexOf(loaiVeData.Rows[e.RowIndex].Cells["Mã_dịch_vụ"].FormattedValue.ToString());
 
-                menuItemDelete.Enabled = true;
+                btnDelete.Enabled = true;
                 toggleAction = false;
             }
         }
@@ -167,11 +183,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 context.SaveChanges();
             };
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
         }
 
-        private void menuItemSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             if (toggleAction)
             {
@@ -195,22 +211,15 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     ShowError();
                 }
             }
-            
+
             ShowData("");
             ClearInput();
             NhapLoaiVe_Load(sender, e);
             txtBoxTenLoaiVe.Focus();
         }
 
-        private void menuItemSearch_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            ShowData(txtBoxMaLoaiVe.Text);
-            ClearInput();
-        }
-
-        private void menuItemDelete_Click(object sender, EventArgs e)
-        {
-            //Still have to check for forgein key
             DialogResult dialog = MessageBox.Show("Are you sure you want to Delete", "Confirmation", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (dialog == DialogResult.OK)
             {
@@ -235,21 +244,21 @@ namespace Quản_lý_Bán_vé_Máy_bay
                         MessageBox.Show("Data was referenced in another table", "Error",
                                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    
+
                 };
-                
+
                 ShowData("");
                 ClearInput();
-                menuItemDelete.Enabled = false;
+                btnDelete.Enabled = false;
                 NhapLoaiVe_Load(sender, e);
                 txtBoxTenLoaiVe.Focus();
             }
         }
 
-        private void menuItemClear_Click(object sender, EventArgs e)
+        private void btnClear_Click(object sender, EventArgs e)
         {
             ClearInput();
-            menuItemDelete.Enabled = false;
+            btnDelete.Enabled = false;
             toggleAction = true;
             NhapLoaiVe_Load(sender, e);
             txtBoxTenLoaiVe.Focus();

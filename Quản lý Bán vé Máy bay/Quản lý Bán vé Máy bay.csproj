@@ -47,6 +47,7 @@
     <Reference Include="DevExpress.Sparkline.v19.2.Core, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Utils.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v19.2.UI, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraBars.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.XtraCharts.v19.2.Extensions, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -160,6 +161,12 @@
     </Compile>
     <Compile Include="ExportReview.Designer.cs">
       <DependentUpon>ExportReview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
     </Compile>
     <Compile Include="Khách.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -277,6 +284,12 @@
     <Compile Include="XtraReportChuyenBay.Designer.cs">
       <DependentUpon>XtraReportChuyenBay.cs</DependentUpon>
     </Compile>
+    <Compile Include="XtraReportLoaiVe.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReportLoaiVe.Designer.cs">
+      <DependentUpon>XtraReportLoaiVe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DE_Chuyenbay_ReportForm.resx">
       <DependentUpon>DE_Chuyenbay_ReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +305,9 @@
     <EmbeddedResource Include="ExportReview.resx">
       <DependentUpon>ExportReview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -306,6 +322,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhapDichVu.resx">
       <DependentUpon>NhapDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapKhach.da.resx">
+      <DependentUpon>NhapKhach.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhapKhach.dje.resx">
+      <DependentUpon>NhapKhach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhapKhach.resx">
       <DependentUpon>NhapKhach.cs</DependentUpon>
@@ -342,6 +364,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportChuyenBay.resx">
       <DependentUpon>XtraReportChuyenBay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportLoaiVe.resx">
+      <DependentUpon>XtraReportLoaiVe.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

@@ -55,16 +55,17 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // gridControl1
             // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.chuyếnbayBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(162, 162, 162, 162);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(243);
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(162, 162, 162, 162);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(243);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(943, 517);
+            this.gridControl1.Size = new System.Drawing.Size(943, 451);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -83,7 +84,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.colNgày_khởi_hành,
             this.Mã_sân_bay_đi,
             this.Mã_sân_bay_dến});
-            this.gridView1.DetailHeight = 20157;
+            this.gridView1.DetailHeight = 30235;
             this.gridView1.FixedLineWidth = 12;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -92,74 +93,86 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             this.colMã_chuyến_bay.AppearanceCell.Options.UseTextOptions = true;
             this.colMã_chuyến_bay.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMã_chuyến_bay.AppearanceHeader.Options.UseTextOptions = true;
+            this.colMã_chuyến_bay.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMã_chuyến_bay.Caption = "MÃ CHUYẾN BAY";
             this.colMã_chuyến_bay.FieldName = "Mã_chuyến_bay";
-            this.colMã_chuyến_bay.MinWidth = 1500;
+            this.colMã_chuyến_bay.MinWidth = 200;
             this.colMã_chuyến_bay.Name = "colMã_chuyến_bay";
             this.colMã_chuyến_bay.Visible = true;
             this.colMã_chuyến_bay.VisibleIndex = 0;
-            this.colMã_chuyến_bay.Width = 1702;
+            this.colMã_chuyến_bay.Width = 200;
             // 
             // colLoại_máy_bay
             // 
             this.colLoại_máy_bay.AppearanceCell.Options.UseTextOptions = true;
             this.colLoại_máy_bay.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLoại_máy_bay.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLoại_máy_bay.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colLoại_máy_bay.Caption = "LOẠI MÁY BAY";
             this.colLoại_máy_bay.FieldName = "Loại_máy_bay";
-            this.colLoại_máy_bay.MinWidth = 1500;
+            this.colLoại_máy_bay.MinWidth = 200;
             this.colLoại_máy_bay.Name = "colLoại_máy_bay";
             this.colLoại_máy_bay.Visible = true;
             this.colLoại_máy_bay.VisibleIndex = 1;
-            this.colLoại_máy_bay.Width = 1702;
+            this.colLoại_máy_bay.Width = 200;
             // 
             // colSố_lượng_chổ_ngồi
             // 
             this.colSố_lượng_chổ_ngồi.AppearanceCell.Options.UseTextOptions = true;
             this.colSố_lượng_chổ_ngồi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSố_lượng_chổ_ngồi.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSố_lượng_chổ_ngồi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSố_lượng_chổ_ngồi.Caption = "SỐ LƯỢNG CHỖ NGỒI";
             this.colSố_lượng_chổ_ngồi.FieldName = "Số_lượng_chỗ_ngồi";
-            this.colSố_lượng_chổ_ngồi.MinWidth = 1500;
+            this.colSố_lượng_chổ_ngồi.MinWidth = 200;
             this.colSố_lượng_chổ_ngồi.Name = "colSố_lượng_chổ_ngồi";
             this.colSố_lượng_chổ_ngồi.Visible = true;
             this.colSố_lượng_chổ_ngồi.VisibleIndex = 2;
-            this.colSố_lượng_chổ_ngồi.Width = 1702;
+            this.colSố_lượng_chổ_ngồi.Width = 200;
             // 
             // colGiờ_khởi_hành
             // 
             this.colGiờ_khởi_hành.AppearanceCell.Options.UseTextOptions = true;
             this.colGiờ_khởi_hành.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGiờ_khởi_hành.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGiờ_khởi_hành.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colGiờ_khởi_hành.Caption = "GIỜ KHỞI HÀNH";
             this.colGiờ_khởi_hành.FieldName = "Giờ_khởi_hành";
-            this.colGiờ_khởi_hành.MinWidth = 1500;
+            this.colGiờ_khởi_hành.MinWidth = 200;
             this.colGiờ_khởi_hành.Name = "colGiờ_khởi_hành";
             this.colGiờ_khởi_hành.Visible = true;
             this.colGiờ_khởi_hành.VisibleIndex = 3;
-            this.colGiờ_khởi_hành.Width = 1702;
+            this.colGiờ_khởi_hành.Width = 200;
             // 
             // colNgày_khởi_hành
             // 
             this.colNgày_khởi_hành.AppearanceCell.Options.UseTextOptions = true;
             this.colNgày_khởi_hành.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colNgày_khởi_hành.AppearanceHeader.Options.UseTextOptions = true;
+            this.colNgày_khởi_hành.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colNgày_khởi_hành.Caption = "NGÀY KHỞI HÀNH";
             this.colNgày_khởi_hành.FieldName = "Ngày_khởi_hành";
-            this.colNgày_khởi_hành.MinWidth = 1500;
+            this.colNgày_khởi_hành.MinWidth = 200;
             this.colNgày_khởi_hành.Name = "colNgày_khởi_hành";
             this.colNgày_khởi_hành.Visible = true;
             this.colNgày_khởi_hành.VisibleIndex = 4;
-            this.colNgày_khởi_hành.Width = 1702;
+            this.colNgày_khởi_hành.Width = 200;
             // 
             // Mã_sân_bay_đi
             // 
             this.Mã_sân_bay_đi.AppearanceCell.Options.UseTextOptions = true;
             this.Mã_sân_bay_đi.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Mã_sân_bay_đi.AppearanceHeader.Options.UseTextOptions = true;
+            this.Mã_sân_bay_đi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Mã_sân_bay_đi.Caption = "SÂN BAY ĐI";
             this.Mã_sân_bay_đi.ColumnEdit = this.repositoryItemGridLookUpEdit1;
             this.Mã_sân_bay_đi.FieldName = "Mã_sân_bay_đi";
-            this.Mã_sân_bay_đi.MinWidth = 1500;
+            this.Mã_sân_bay_đi.MinWidth = 200;
             this.Mã_sân_bay_đi.Name = "Mã_sân_bay_đi";
             this.Mã_sân_bay_đi.Visible = true;
             this.Mã_sân_bay_đi.VisibleIndex = 5;
-            this.Mã_sân_bay_đi.Width = 1702;
+            this.Mã_sân_bay_đi.Width = 200;
             // 
             // repositoryItemGridLookUpEdit1
             // 
@@ -178,7 +191,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // repositoryItemGridLookUpEdit1View
             // 
-            this.repositoryItemGridLookUpEdit1View.DetailHeight = 20157;
+            this.repositoryItemGridLookUpEdit1View.DetailHeight = 30235;
             this.repositoryItemGridLookUpEdit1View.FixedLineWidth = 12;
             this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
@@ -189,14 +202,16 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             this.Mã_sân_bay_dến.AppearanceCell.Options.UseTextOptions = true;
             this.Mã_sân_bay_dến.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.Mã_sân_bay_dến.AppearanceHeader.Options.UseTextOptions = true;
+            this.Mã_sân_bay_dến.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.Mã_sân_bay_dến.Caption = "SÂN BAY ĐẾN";
             this.Mã_sân_bay_dến.ColumnEdit = this.repositoryItemGridLookUpEdit1;
             this.Mã_sân_bay_dến.FieldName = "Mã_sân_bay_đến";
-            this.Mã_sân_bay_dến.MinWidth = 1500;
+            this.Mã_sân_bay_dến.MinWidth = 200;
             this.Mã_sân_bay_dến.Name = "Mã_sân_bay_dến";
             this.Mã_sân_bay_dến.Visible = true;
             this.Mã_sân_bay_dến.VisibleIndex = 6;
-            this.Mã_sân_bay_dến.Width = 1702;
+            this.Mã_sân_bay_dến.Width = 200;
             // 
             // btnTaoReport
             // 

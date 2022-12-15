@@ -41,6 +41,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.repositoryItemGridLookUpEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.dịchvụBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.btnTaoReport = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaiveBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
@@ -51,16 +52,17 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // gridControl1
             // 
+            this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridControl1.DataSource = this.loaiveBindingSource;
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl1.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.gridControl1.Margin = new System.Windows.Forms.Padding(6);
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemGridLookUpEdit1});
-            this.gridControl1.Size = new System.Drawing.Size(941, 542);
+            this.gridControl1.Size = new System.Drawing.Size(941, 462);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -142,11 +144,23 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             // 
+            // btnTaoReport
+            // 
+            this.btnTaoReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTaoReport.Location = new System.Drawing.Point(829, 500);
+            this.btnTaoReport.Name = "btnTaoReport";
+            this.btnTaoReport.Size = new System.Drawing.Size(100, 30);
+            this.btnTaoReport.TabIndex = 2;
+            this.btnTaoReport.Text = "Tạo Report";
+            this.btnTaoReport.UseVisualStyleBackColor = true;
+            this.btnTaoReport.Click += new System.EventHandler(this.btnTaoReport_Click);
+            // 
             // DE_Loaive_ReportForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 542);
+            this.Controls.Add(this.btnTaoReport);
             this.Controls.Add(this.gridControl1);
             this.IconOptions.Image = ((System.Drawing.Image)(resources.GetObject("DE_Loaive_ReportForm.IconOptions.Image")));
             this.Name = "DE_Loaive_ReportForm";
@@ -174,5 +188,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repositoryItemGridLookUpEdit1;
         private System.Windows.Forms.BindingSource dịchvụBindingSource;
         private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private System.Windows.Forms.Button btnTaoReport;
     }
 }
