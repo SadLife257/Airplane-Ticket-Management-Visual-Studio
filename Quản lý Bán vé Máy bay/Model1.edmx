@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="QuanLyVeMayBayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="QuanLyVeMayBayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Chuyến_bay">
           <Key>
             <PropertyRef Name="Mã_chuyến_bay" />
@@ -62,6 +62,13 @@
           <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tài_khoản">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="varchar" MaxLength="12" Nullable="false" />
         </EntityType>
         <EntityType Name="Vé">
           <Key>
@@ -153,6 +160,7 @@
           <EntitySet Name="Loại_vé" EntityType="Self.Loại_vé" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sân_bay" EntityType="Self.Sân_bay" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tài_khoản" EntityType="Self.Tài_khoản" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Vé" EntityType="Self.Vé" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Chuyến_b__Mã_s__2A4B4B5E" Association="Self.FK__Chuyến_b__Mã_s__2A4B4B5E">
             <End Role="Sân_bay" EntitySet="Sân_bay" />
@@ -179,8 +187,7 @@
             <End Role="Vé" EntitySet="Vé" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="QuanLyVeMayBayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -220,7 +227,7 @@
           <Property Name="Số_điện_thoại" Type="String" MaxLength="11" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Vé" Relationship="Self.FK__Ve___Ma__kha_ch__32E0915F" FromRole="Kha_ch" ToRole="Ve_" />
         </EntityType>
-        <EntityType Name="Loại_vé">
+        <EntityType Name="Loại_vé">
           <Key>
             <PropertyRef Name="Mã_loại_vé" />
           </Key>
@@ -303,7 +310,7 @@
         </Association>
         <Association Name="FK__Loa_i_ve___Ma__d__2E1BDC42">
           <End Role="Di_ch_vu_" Type="QuanLyVeMayBayModel.Dịch_vụ" Multiplicity="1" />
-          <End Role="Loa_i_ve_" Type="QuanLyVeMayBayModel.Loại_vé" Multiplicity="*" />
+          <End Role="Loa_i_ve_" Type="QuanLyVeMayBayModel.Loại_vé" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Di_ch_vu_">
               <PropertyRef Name="Mã_dịch_vụ" />
@@ -326,7 +333,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Ve___Ma__loa_i_v__31EC6D26">
-          <End Role="Loa_i_ve_" Type="QuanLyVeMayBayModel.Loại_vé" Multiplicity="1" />
+          <End Role="Loa_i_ve_" Type="QuanLyVeMayBayModel.Loại_vé" Multiplicity="1" />
           <End Role="Ve_" Type="QuanLyVeMayBayModel.Vé" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Loa_i_ve_">
@@ -341,7 +348,7 @@
           <EntitySet Name="Chuyến_bay" EntityType="QuanLyVeMayBayModel.Chuyến_bay" />
           <EntitySet Name="Di_ch_vu_" EntityType="QuanLyVeMayBayModel.Dịch_vụ" />
           <EntitySet Name="Khách" EntityType="QuanLyVeMayBayModel.Khách" />
-          <EntitySet Name="Loa_i_ve_" EntityType="QuanLyVeMayBayModel.Loại_vé" />
+          <EntitySet Name="Loa_i_ve_" EntityType="QuanLyVeMayBayModel.Loại_vé" />
           <EntitySet Name="Sân_bay" EntityType="Self.Sân_bay" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Ve_" EntityType="QuanLyVeMayBayModel.Vé" />
@@ -369,7 +376,15 @@
             <End Role="Loa_i_ve_" EntitySet="Loa_i_ve_" />
             <End Role="Ve_" EntitySet="Ve_" />
           </AssociationSet>
+          <EntitySet Name="Tài_khoản" EntityType="QuanLyVeMayBayModel.Tài_khoản" />
         </EntityContainer>
+        <EntityType Name="Tài_khoản">
+          <Key>
+            <PropertyRef Name="email" />
+          </Key>
+          <Property Name="email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -411,7 +426,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Loa_i_ve_">
-            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Loại_vé">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Loại_vé">
               <MappingFragment StoreEntitySet="Loại_vé">
                 <ScalarProperty Name="Mã_loại_vé" ColumnName="Mã_loại_vé" />
                 <ScalarProperty Name="Tên_loại_vé" ColumnName="Tên_loại_vé" />
@@ -449,6 +464,14 @@
                 <ScalarProperty Name="Mã_chuyến_bay" ColumnName="Mã_chuyến_bay" />
                 <ScalarProperty Name="Mã_loại_vé" ColumnName="Mã_loại_vé" />
                 <ScalarProperty Name="Mã_khách" ColumnName="Mã_khách" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tài_khoản">
+            <EntityTypeMapping TypeName="QuanLyVeMayBayModel.Tài_khoản">
+              <MappingFragment StoreEntitySet="Tài_khoản">
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="email" ColumnName="email" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -27,16 +27,31 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if(txtBoxUsername.Text.Equals(USERNAME) && txtBoxPassword.Text.Equals(PASSWORD))
+            using (var context = new QuanLyVeMayBayEntities())
             {
-                new Home().Show();
-                Hide();
-            }
-            else
-            {
-                MessageBox.Show("Your username or password is not correct!");
-                txtBoxUsername.Focus();
-            }
+                var query = context.Tài_khoản
+                                   .Select(taiKhoan => new
+                                   {
+                                       email = taiKhoan.email,
+                                       password = taiKhoan.password
+                                   })
+                                   .Where(taiKhoan => taiKhoan.email.Equals(txtBoxUsername.Text))
+                                   .FirstOrDefault();
+
+                if (query != null)
+                {
+                    if(txtBoxPassword.Text.Equals(query.password))
+                    {
+                        new Home().Show();
+                        Hide();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Your username or password is not correct!");
+                    txtBoxUsername.Focus();
+                }
+            };
         }
 
         private void labelClearField_Click(object sender, EventArgs e)

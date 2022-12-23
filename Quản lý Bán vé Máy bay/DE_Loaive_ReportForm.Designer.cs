@@ -69,7 +69,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // loaiveBindingSource
             // 
-            this.loaiveBindingSource.DataSource = typeof(Quản_lý_Bán_vé_Máy_bay.Loại_vé);
+            this.loaiveBindingSource.DataSource = typeof(Quản_lý_Bán_vé_Máy_bay.Loại_vé);
             // 
             // gridView1
             // 

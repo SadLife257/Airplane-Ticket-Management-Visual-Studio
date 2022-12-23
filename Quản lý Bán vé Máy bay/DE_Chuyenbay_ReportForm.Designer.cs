@@ -215,7 +215,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // btnTaoReport
             // 
-            this.btnTaoReport.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTaoReport.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTaoReport.BackColor = System.Drawing.SystemColors.Window;
             this.btnTaoReport.ForeColor = System.Drawing.SystemColors.WindowText;
             this.btnTaoReport.Location = new System.Drawing.Point(279, 470);

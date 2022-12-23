@@ -28,9 +28,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
         public virtual DbSet<Chuyến_bay> Chuyến_bay { get; set; }
         public virtual DbSet<Dịch_vụ> Dịch_vụ { get; set; }
         public virtual DbSet<Khách> Khách { get; set; }
-        public virtual DbSet<Loại_vé> Loại_vé { get; set; }
+        public virtual DbSet<Loại_vé> Loại_vé { get; set; }
         public virtual DbSet<Sân_bay> Sân_bay { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<Vé> Vé { get; set; }
+        public virtual DbSet<Vé> Vé { get; set; }
+        public virtual DbSet<Tài_khoản> Tài_khoản { get; set; }
     }
 }

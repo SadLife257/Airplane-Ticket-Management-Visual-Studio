@@ -236,7 +236,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
             using (var context = new QuanLyVeMayBayEntities())
             {
-                ExportReview.formInstance.gridView.DataSource = context.Vé.ToList();
+                ExportReview.formInstance.gridView.DataSource = context.Vé.ToList();
 
                 ExportReview.formInstance.gridView.Columns["Chuyến_bay"].Visible = false;
                 ExportReview.formInstance.gridView.Columns["Khách"].Visible = false;

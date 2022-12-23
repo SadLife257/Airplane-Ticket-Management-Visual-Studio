@@ -141,12 +141,6 @@
     <Compile Include="DE_Khach_ReportForm.Designer.cs">
       <DependentUpon>DE_Khach_ReportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="DE_Khach_ReportForm_2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DE_Khach_ReportForm_2.Designer.cs">
-      <DependentUpon>DE_Khach_ReportForm_2.cs</DependentUpon>
-    </Compile>
     <Compile Include="DE_Loaive_ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,14 +171,14 @@
     <Compile Include="Khách.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Loại_vé.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loại_vé.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="MainHub.cs">
       <SubType>Form</SubType>
@@ -268,11 +262,20 @@
     <Compile Include="ReportForm.Designer.cs">
       <DependentUpon>ReportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="sysdiagram.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Sân_bay.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tài_khoản.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Vé.cs">
@@ -307,9 +310,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DE_Khach_ReportForm.resx">
       <DependentUpon>DE_Khach_ReportForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DE_Khach_ReportForm_2.resx">
-      <DependentUpon>DE_Khach_ReportForm_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DE_Loaive_ReportForm.resx">
       <DependentUpon>DE_Loaive_ReportForm.cs</DependentUpon>
@@ -365,6 +365,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
@@ -373,6 +374,9 @@
     <EmbeddedResource Include="Report_SBCB.rdlc" />
     <EmbeddedResource Include="ReportForm.resx">
       <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraFormChuyenBay.resx">
       <DependentUpon>XtraFormChuyenBay.cs</DependentUpon>
@@ -427,6 +431,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ds_tinhthanh.txt" />
+    <None Include="icon\plane.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
@@ -454,8 +459,6 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="icon\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -12,10 +12,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
     using System;
     using System.Collections.Generic;
     
-    public partial class Loại_vé
+    public partial class Loại_vé
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Loại_vé()
+        public Loại_vé()
         {
             this.Vé = new HashSet<Vé>();
         }

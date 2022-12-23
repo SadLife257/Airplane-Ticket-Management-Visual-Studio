@@ -19,6 +19,37 @@ namespace Quản_lý_Bán_vé_Máy_bay
             InitializeComponent();
         }
 
+        private bool CheckField()
+        {
+            if(String.IsNullOrEmpty(txtBoxEmail.Text) || String.IsNullOrWhiteSpace(txtBoxEmail.Text))
+            {
+                MessageBox.Show("Email Already Exist");
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtBoxPassword.Text) || String.IsNullOrWhiteSpace(txtBoxPassword.Text))
+            {
+                return false;
+            }
+            else if (String.IsNullOrEmpty(txtBoxConfirmPassword.Text) || String.IsNullOrWhiteSpace(txtBoxConfirmPassword.Text))
+            {
+                return false;
+            }
+            else if(!txtBoxPassword.Text.Equals(txtBoxConfirmPassword.Text))
+            {
+                MessageBox.Show("Password Incorrect");
+                return false;
+            }
+            return true;
+        }
+
+        private void ClearField()
+        {
+            txtBoxEmail.Clear();
+            txtBoxPassword.Clear();
+            txtBoxConfirmPassword.Clear();
+            txtBoxEmail.Focus();
+        }
+
         private void labelToLogin_Click(object sender, EventArgs e)
         {
             this.LoginRef.Show();
@@ -27,14 +58,38 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
         private void labelClearField_Click(object sender, EventArgs e)
         {
-            txtBoxUsername.Clear();
-            txtBoxPassword.Clear();
-            txtBoxUsername.Focus();
+            ClearField();
         }
 
         private void labelExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            if(CheckField())
+            {
+                using (var context = new QuanLyVeMayBayEntities())
+                {
+                    var taiKhoan = new Tài_khoản()
+                    {
+                        email = txtBoxEmail.Text.Trim(),
+                        password = txtBoxPassword.Text
+                    };
+                    context.Tài_khoản.Add(taiKhoan);
+
+                    context.SaveChanges();
+
+                    this.LoginRef.Show();
+                    Close();
+                };
+            }
+
+            else
+            {
+                ClearField();
+            }
         }
     }
 }

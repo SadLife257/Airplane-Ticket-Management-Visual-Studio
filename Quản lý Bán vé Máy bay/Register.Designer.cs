@@ -32,11 +32,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxUsername = new System.Windows.Forms.TextBox();
             this.txtBoxEmail = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -75,17 +72,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label1.Text = "REGISTER";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(36, 218);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(83, 20);
-            this.label3.TabIndex = 10;
-            this.label3.Text = "Username";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -97,19 +83,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label2.TabIndex = 11;
             this.label2.Text = "Email";
             // 
-            // txtBoxUsername
-            // 
-            this.txtBoxUsername.BackColor = System.Drawing.Color.Black;
-            this.txtBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBoxUsername.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtBoxUsername.Location = new System.Drawing.Point(39, 241);
-            this.txtBoxUsername.Name = "txtBoxUsername";
-            this.txtBoxUsername.Size = new System.Drawing.Size(236, 19);
-            this.txtBoxUsername.TabIndex = 3;
-            // 
             // txtBoxEmail
             // 
-            this.txtBoxEmail.BackColor = System.Drawing.Color.Black;
+            this.txtBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.txtBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxEmail.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtBoxEmail.Location = new System.Drawing.Point(39, 170);
@@ -117,17 +93,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.txtBoxEmail.Size = new System.Drawing.Size(236, 19);
             this.txtBoxEmail.TabIndex = 2;
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(172)))), ((int)(((byte)(226)))));
-            this.panel2.Location = new System.Drawing.Point(39, 262);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(236, 1);
-            this.panel2.TabIndex = 6;
-            // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(172)))), ((int)(((byte)(226)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.panel1.Location = new System.Drawing.Point(39, 191);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(236, 1);
@@ -135,26 +103,26 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(172)))), ((int)(((byte)(226)))));
-            this.panel3.Location = new System.Drawing.Point(39, 334);
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.panel3.Location = new System.Drawing.Point(39, 276);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(236, 1);
             this.panel3.TabIndex = 7;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(172)))), ((int)(((byte)(226)))));
-            this.panel4.Location = new System.Drawing.Point(39, 408);
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
+            this.panel4.Location = new System.Drawing.Point(39, 350);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(236, 1);
             this.panel4.TabIndex = 6;
             // 
             // txtBoxPassword
             // 
-            this.txtBoxPassword.BackColor = System.Drawing.Color.Black;
+            this.txtBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.txtBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtBoxPassword.Location = new System.Drawing.Point(39, 313);
+            this.txtBoxPassword.Location = new System.Drawing.Point(39, 255);
             this.txtBoxPassword.Name = "txtBoxPassword";
             this.txtBoxPassword.PasswordChar = '*';
             this.txtBoxPassword.Size = new System.Drawing.Size(236, 19);
@@ -162,10 +130,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // txtBoxConfirmPassword
             // 
-            this.txtBoxConfirmPassword.BackColor = System.Drawing.Color.Black;
+            this.txtBoxConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.txtBoxConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBoxConfirmPassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtBoxConfirmPassword.Location = new System.Drawing.Point(39, 387);
+            this.txtBoxConfirmPassword.Location = new System.Drawing.Point(39, 329);
             this.txtBoxConfirmPassword.Name = "txtBoxConfirmPassword";
             this.txtBoxConfirmPassword.PasswordChar = '*';
             this.txtBoxConfirmPassword.Size = new System.Drawing.Size(236, 19);
@@ -176,7 +144,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(36, 290);
+            this.label4.Location = new System.Drawing.Point(36, 232);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(78, 20);
             this.label4.TabIndex = 11;
@@ -187,7 +155,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(36, 364);
+            this.label5.Location = new System.Drawing.Point(36, 306);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(137, 20);
             this.label5.TabIndex = 10;
@@ -198,7 +166,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.labelClearField.AutoSize = true;
             this.labelClearField.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelClearField.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelClearField.Location = new System.Drawing.Point(167, 412);
+            this.labelClearField.Location = new System.Drawing.Point(167, 354);
             this.labelClearField.Name = "labelClearField";
             this.labelClearField.Size = new System.Drawing.Size(108, 22);
             this.labelClearField.TabIndex = 6;
@@ -207,22 +175,23 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(82)))), ((int)(((byte)(172)))), ((int)(((byte)(226)))));
+            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(153)))), ((int)(((byte)(255)))));
             this.btnRegister.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRegister.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnRegister.Location = new System.Drawing.Point(40, 447);
+            this.btnRegister.Location = new System.Drawing.Point(39, 418);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(236, 50);
             this.btnRegister.TabIndex = 7;
             this.btnRegister.Text = "REGISTER";
             this.btnRegister.UseVisualStyleBackColor = false;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // labelExit
             // 
             this.labelExit.AutoSize = true;
             this.labelExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelExit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelExit.Location = new System.Drawing.Point(129, 569);
+            this.labelExit.Location = new System.Drawing.Point(128, 540);
             this.labelExit.Name = "labelExit";
             this.labelExit.Size = new System.Drawing.Size(44, 22);
             this.labelExit.TabIndex = 9;
@@ -234,7 +203,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(63, 512);
+            this.label6.Location = new System.Drawing.Point(62, 483);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(190, 20);
             this.label6.TabIndex = 15;
@@ -245,7 +214,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.labelToLogin.AutoSize = true;
             this.labelToLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelToLogin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelToLogin.Location = new System.Drawing.Point(84, 532);
+            this.labelToLogin.Location = new System.Drawing.Point(83, 503);
             this.labelToLogin.Name = "labelToLogin";
             this.labelToLogin.Size = new System.Drawing.Size(139, 22);
             this.labelToLogin.TabIndex = 8;
@@ -256,7 +225,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Black;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.ClientSize = new System.Drawing.Size(308, 600);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.labelToLogin);
@@ -264,16 +233,13 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.labelClearField);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBoxConfirmPassword);
-            this.Controls.Add(this.txtBoxUsername);
             this.Controls.Add(this.txtBoxPassword);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.txtBoxEmail);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
@@ -292,11 +258,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBoxUsername;
         private System.Windows.Forms.TextBox txtBoxEmail;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;

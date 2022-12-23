@@ -23,6 +23,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
     
         public virtual Chuyến_bay Chuyến_bay { get; set; }
         public virtual Khách Khách { get; set; }
-        public virtual Loại_vé Loại_vé { get; set; }
+        public virtual Loại_vé Loại_vé { get; set; }
     }
 }

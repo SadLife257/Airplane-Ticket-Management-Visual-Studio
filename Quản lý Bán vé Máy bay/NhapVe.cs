@@ -91,7 +91,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     int random_number = rnd.Next(1000000, 9999999);
 
                     id += random_number;
-                } while (context.Vé.Any(e => e.Số_vé.Equals(id)));
+                } while (context.Vé.Any(e => e.Số_vé.Equals(id)));
             }
 
             return id;
@@ -101,7 +101,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                veData.DataSource = context.Vé
+                veData.DataSource = context.Vé
                                            .Select(e => new
                                            {
                                                Số_vé = e.Số_vé,
@@ -199,7 +199,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                     Mã_loại_vé = comBoxMaLoaiVe.SelectedItem.ToString(),
                     Mã_khách = comBoxMaKhach.SelectedItem.ToString(),
                 };
-                context.Vé.Add(ve);
+                context.Vé.Add(ve);
 
                 context.SaveChanges();
             };
@@ -209,7 +209,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                var ve = context.Vé
+                var ve = context.Vé
                                 .Where(e => e.Số_vé.Equals(txtBoxSoVe.Text.Trim()))
                                 .First();
                 if (ve != null)
@@ -274,8 +274,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
                         Mã_loại_vé = comBoxMaLoaiVe.SelectedItem.ToString(),
                         Mã_khách = comBoxMaKhach.SelectedItem.ToString(),
                     };
-                    context.Vé.Attach(ve);
-                    context.Vé.Remove(ve);
+                    context.Vé.Attach(ve);
+                    context.Vé.Remove(ve);
 
                     context.SaveChanges();
                 };

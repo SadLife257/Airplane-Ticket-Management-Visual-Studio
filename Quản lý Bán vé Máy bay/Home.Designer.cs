@@ -45,22 +45,22 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnDichvu = new System.Windows.Forms.Button();
             this.btnChuyenbay = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panelFrame = new System.Windows.Forms.Panel();
             this.panelTitleFrame = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnCloseFrame = new System.Windows.Forms.Button();
             this.labelFrameTitlte = new System.Windows.Forms.Label();
+            this.panelFrame = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelFunctionSubMenu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTitleFrame.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -274,7 +274,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(54)))), ((int)(((byte)(67)))));
+            this.flowLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(134)))), ((int)(((byte)(224)))));
             this.flowLayoutPanel1.Controls.Add(this.pictureBox2);
             this.flowLayoutPanel1.Controls.Add(this.label2);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -282,16 +282,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 149);
             this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(220, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -326,17 +316,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label1.TabIndex = 0;
             this.label1.Text = "TonDucThangUniversity \r\n52000632 - Nguyễn Lê Gia Bảo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panelFrame
-            // 
-            this.panelFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(87)))), ((int)(((byte)(122)))));
-            this.panelFrame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelFrame.BackgroundImage")));
-            this.panelFrame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelFrame.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFrame.Location = new System.Drawing.Point(220, 149);
-            this.panelFrame.Name = "panelFrame";
-            this.panelFrame.Size = new System.Drawing.Size(1064, 645);
-            this.panelFrame.TabIndex = 2;
             // 
             // panelTitleFrame
             // 
@@ -413,6 +392,27 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.labelFrameTitlte.Text = "HOME";
             this.labelFrameTitlte.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // panelFrame
+            // 
+            this.panelFrame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(87)))), ((int)(((byte)(122)))));
+            this.panelFrame.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelFrame.BackgroundImage")));
+            this.panelFrame.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelFrame.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelFrame.Location = new System.Drawing.Point(220, 149);
+            this.panelFrame.Name = "panelFrame";
+            this.panelFrame.Size = new System.Drawing.Size(1064, 645);
+            this.panelFrame.TabIndex = 2;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(220, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -430,9 +430,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.panel1.ResumeLayout(false);
             this.panelFunctionSubMenu.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelTitleFrame.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }

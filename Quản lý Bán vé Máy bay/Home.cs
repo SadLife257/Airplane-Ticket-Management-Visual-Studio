@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -18,11 +19,23 @@ namespace Quản_lý_Bán_vé_Máy_bay
         public Home()
         {
             InitializeComponent();
+
+            Thread thread = new Thread(new ThreadStart(formRun));
+            thread.Start();
+            Thread.Sleep(5000);
+
             this.Text = string.Empty;
             this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             btnCloseFrame.Visible = false;
             panelFunctionSubMenu.Visible = false;
+
+            thread.Abort();
+        }
+
+        private void formRun()
+        {
+            Application.Run(new SplashScreen());
         }
 
         private void ShowSubMenu(Panel subMenu)
@@ -101,7 +114,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
         private void btnReportKhachhang_Click(object sender, EventArgs e)
         {
-            OpenForm(new DE_Khach_ReportForm_2());
+            OpenForm(new DE_Khach_ReportForm());
         }
 
         private void btnReportLoaive_Click(object sender, EventArgs e)

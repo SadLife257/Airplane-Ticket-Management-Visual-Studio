@@ -154,7 +154,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         {
             using (var context = new QuanLyVeMayBayEntities())
             {
-                var loaiVe = new Loại_vé()
+                var loaiVe = new Loại_vé()
                 {
                     Mã_loại_vé = txtBoxMaLoaiVe.Text.Trim(),
                     Tên_loại_vé = txtBoxTenLoaiVe.Text.Trim(),
@@ -225,7 +225,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             {
                 using (var context = new QuanLyVeMayBayEntities())
                 {
-                    var loaiVe = new Loại_vé
+                    var loaiVe = new Loại_vé
                     {
                         Mã_loại_vé = txtBoxMaLoaiVe.Text,
                         Tên_loại_vé = txtBoxTenLoaiVe.Text,

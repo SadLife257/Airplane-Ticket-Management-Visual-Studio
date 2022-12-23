@@ -17,7 +17,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Dịch_vụ()
         {
-            this.Loại_vé = new HashSet<Loại_vé>();
+            this.Loại_vé = new HashSet<Loại_vé>();
         }
     
         public string Mã_dịch_vụ { get; set; }
@@ -27,6 +27,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
         public int Trị_giá_dịch_vụ_khác { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Loại_vé> Loại_vé { get; set; }
+        public virtual ICollection<Loại_vé> Loại_vé { get; set; }
     }
 }
