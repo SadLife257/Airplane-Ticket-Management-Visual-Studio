@@ -36,7 +36,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnReportLoaive = new System.Windows.Forms.Button();
             this.btnReportKhachhang = new System.Windows.Forms.Button();
             this.btnContact = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.btnLogout = new System.Windows.Forms.Button();
             this.btnBaocao = new System.Windows.Forms.Button();
             this.btnVe = new System.Windows.Forms.Button();
             this.btnLoaive = new System.Windows.Forms.Button();
@@ -45,6 +45,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnDichvu = new System.Windows.Forms.Button();
             this.btnChuyenbay = new System.Windows.Forms.Button();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,13 +55,12 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnCloseFrame = new System.Windows.Forms.Button();
             this.labelFrameTitlte = new System.Windows.Forms.Label();
             this.panelFrame = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelFunctionSubMenu.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelTitleFrame.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,7 +68,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(66)))), ((int)(((byte)(88)))));
             this.panel1.Controls.Add(this.panelFunctionSubMenu);
             this.panel1.Controls.Add(this.btnContact);
-            this.panel1.Controls.Add(this.button8);
+            this.panel1.Controls.Add(this.btnLogout);
             this.panel1.Controls.Add(this.btnBaocao);
             this.panel1.Controls.Add(this.btnVe);
             this.panel1.Controls.Add(this.btnLoaive);
@@ -150,20 +150,22 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnContact.TabIndex = 9;
             this.btnContact.Text = "Contact Me";
             this.btnContact.UseVisualStyleBackColor = true;
+            this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
             // 
-            // button8
+            // btnLogout
             // 
-            this.button8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
-            this.button8.Location = new System.Drawing.Point(0, 814);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(220, 60);
-            this.button8.TabIndex = 8;
-            this.button8.Text = "Đăng xuất";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnLogout.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnLogout.FlatAppearance.BorderSize = 0;
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogout.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
+            this.btnLogout.Location = new System.Drawing.Point(0, 814);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(220, 60);
+            this.btnLogout.TabIndex = 8;
+            this.btnLogout.Text = "Đăng xuất";
+            this.btnLogout.UseVisualStyleBackColor = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnBaocao
             // 
@@ -282,6 +284,16 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(220, 149);
             this.flowLayoutPanel1.TabIndex = 1;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(220, 49);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
             // 
             // label2
             // 
@@ -403,16 +415,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.panelFrame.Size = new System.Drawing.Size(1064, 645);
             this.panelFrame.TabIndex = 2;
             // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(220, 49);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -430,9 +432,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.panel1.ResumeLayout(false);
             this.panelFunctionSubMenu.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panelTitleFrame.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -451,7 +453,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panelFrame;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button btnLogout;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panelTitleFrame;

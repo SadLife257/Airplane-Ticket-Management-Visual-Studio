@@ -129,6 +129,12 @@
     <Compile Include="Chuyến_bay.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Contact.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contact.Designer.cs">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </Compile>
     <Compile Include="DE_Chuyenbay_ReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,12 +162,6 @@
     <Compile Include="Dịch_vụ.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="ExportReview.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ExportReview.Designer.cs">
-      <DependentUpon>ExportReview.cs</DependentUpon>
-    </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,18 +179,6 @@
     </Compile>
     <Compile Include="Loại_vé.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MainHub.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainHub.Designer.cs">
-      <DependentUpon>MainHub.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainScreen.Designer.cs">
-      <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -256,12 +244,6 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReportForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ReportForm.Designer.cs">
-      <DependentUpon>ReportForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,12 +263,6 @@
     <Compile Include="Vé.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="XtraFormChuyenBay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="XtraFormChuyenBay.Designer.cs">
-      <DependentUpon>XtraFormChuyenBay.cs</DependentUpon>
-    </Compile>
     <Compile Include="XtraReportChuyenBay.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -305,6 +281,9 @@
     <Compile Include="XtraReportLoaiVe.Designer.cs">
       <DependentUpon>XtraReportLoaiVe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Contact.resx">
+      <DependentUpon>Contact.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DE_Chuyenbay_ReportForm.resx">
       <DependentUpon>DE_Chuyenbay_ReportForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,20 +296,11 @@
     <EmbeddedResource Include="DE_ReportForm_Main.resx">
       <DependentUpon>DE_ReportForm_Main.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ExportReview.resx">
-      <DependentUpon>ExportReview.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainHub.resx">
-      <DependentUpon>MainHub.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainScreen.resx">
-      <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhapChuyenBay.resx">
       <DependentUpon>NhapChuyenBay.cs</DependentUpon>
@@ -370,16 +340,8 @@
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report_DVLV.rdlc" />
-    <EmbeddedResource Include="Report_SBCB.rdlc" />
-    <EmbeddedResource Include="ReportForm.resx">
-      <DependentUpon>ReportForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="XtraFormChuyenBay.resx">
-      <DependentUpon>XtraFormChuyenBay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="XtraReportChuyenBay.resx">
       <DependentUpon>XtraReportChuyenBay.cs</DependentUpon>

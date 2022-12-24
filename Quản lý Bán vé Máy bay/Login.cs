@@ -12,9 +12,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
 {
     public partial class Login : Form
     {
-        private const string USERNAME = "admin";
-        private const string PASSWORD = "123456";
-        
         public Login()
         {
             InitializeComponent();
@@ -42,8 +39,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 {
                     if(txtBoxPassword.Text.Equals(query.password))
                     {
-                        new Home().Show();
+                        Home form = new Home();
+                        form.LoginRef = this;
                         Hide();
+                        form.Show();
                     }
                 }
                 else

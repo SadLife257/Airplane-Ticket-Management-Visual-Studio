@@ -15,6 +15,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
     public partial class Home : Form
     {
         Form activeForm = null;
+        public Form LoginRef { get; set; }
 
         public Home()
         {
@@ -151,6 +152,17 @@ namespace Quản_lý_Bán_vé_Máy_bay
         private void btnMinizize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+            OpenForm(new Contact());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.LoginRef.Show();
+            Close();
         }
     }
 }
