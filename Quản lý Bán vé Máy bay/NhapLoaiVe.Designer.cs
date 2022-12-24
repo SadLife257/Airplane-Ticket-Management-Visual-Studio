@@ -50,10 +50,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(15, 41);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(22, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 13);
+            this.label1.Size = new System.Drawing.Size(89, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã loại vé";
             // 
@@ -63,10 +62,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label2.Location = new System.Drawing.Point(15, 102);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(22, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 13);
+            this.label2.Size = new System.Drawing.Size(95, 20);
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên loại vé";
             // 
@@ -76,10 +74,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(15, 161);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(22, 248);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 0;
             this.label3.Text = "Giá tiền";
             // 
@@ -89,10 +86,9 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label4.Location = new System.Drawing.Point(15, 228);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(22, 351);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.Size = new System.Drawing.Size(94, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã dịch vụ";
             // 
@@ -100,11 +96,11 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             this.txtBoxMaLoaiVe.BackColor = System.Drawing.SystemColors.Window;
             this.txtBoxMaLoaiVe.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBoxMaLoaiVe.Location = new System.Drawing.Point(100, 38);
-            this.txtBoxMaLoaiVe.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBoxMaLoaiVe.Location = new System.Drawing.Point(150, 58);
+            this.txtBoxMaLoaiVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxMaLoaiVe.Name = "txtBoxMaLoaiVe";
             this.txtBoxMaLoaiVe.ReadOnly = true;
-            this.txtBoxMaLoaiVe.Size = new System.Drawing.Size(133, 20);
+            this.txtBoxMaLoaiVe.Size = new System.Drawing.Size(198, 26);
             this.txtBoxMaLoaiVe.TabIndex = 1;
             this.txtBoxMaLoaiVe.TabStop = false;
             // 
@@ -112,20 +108,20 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             this.txtBoxTenLoaiVe.BackColor = System.Drawing.SystemColors.Window;
             this.txtBoxTenLoaiVe.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBoxTenLoaiVe.Location = new System.Drawing.Point(100, 101);
-            this.txtBoxTenLoaiVe.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBoxTenLoaiVe.Location = new System.Drawing.Point(150, 155);
+            this.txtBoxTenLoaiVe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxTenLoaiVe.Name = "txtBoxTenLoaiVe";
-            this.txtBoxTenLoaiVe.Size = new System.Drawing.Size(133, 20);
+            this.txtBoxTenLoaiVe.Size = new System.Drawing.Size(198, 26);
             this.txtBoxTenLoaiVe.TabIndex = 2;
             // 
             // txtBoxGiaTien
             // 
             this.txtBoxGiaTien.BackColor = System.Drawing.SystemColors.Window;
             this.txtBoxGiaTien.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBoxGiaTien.Location = new System.Drawing.Point(100, 159);
-            this.txtBoxGiaTien.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.txtBoxGiaTien.Location = new System.Drawing.Point(150, 245);
+            this.txtBoxGiaTien.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBoxGiaTien.Name = "txtBoxGiaTien";
-            this.txtBoxGiaTien.Size = new System.Drawing.Size(133, 20);
+            this.txtBoxGiaTien.Size = new System.Drawing.Size(198, 26);
             this.txtBoxGiaTien.TabIndex = 3;
             this.txtBoxGiaTien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBoxGiaTien_KeyPress);
             // 
@@ -139,13 +135,13 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.loaiVeData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.loaiVeData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.loaiVeData.GridColor = System.Drawing.Color.Black;
-            this.loaiVeData.Location = new System.Drawing.Point(289, -5);
-            this.loaiVeData.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.loaiVeData.Location = new System.Drawing.Point(434, -8);
+            this.loaiVeData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loaiVeData.Name = "loaiVeData";
             this.loaiVeData.ReadOnly = true;
             this.loaiVeData.RowHeadersWidth = 62;
             this.loaiVeData.RowTemplate.Height = 33;
-            this.loaiVeData.Size = new System.Drawing.Size(315, 385);
+            this.loaiVeData.Size = new System.Drawing.Size(472, 592);
             this.loaiVeData.TabIndex = 5;
             this.loaiVeData.TabStop = false;
             this.loaiVeData.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.loaiVeData_CellClick);
@@ -155,10 +151,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.comBoxMaDichVu.BackColor = System.Drawing.SystemColors.Window;
             this.comBoxMaDichVu.ForeColor = System.Drawing.SystemColors.WindowText;
             this.comBoxMaDichVu.FormattingEnabled = true;
-            this.comBoxMaDichVu.Location = new System.Drawing.Point(100, 227);
-            this.comBoxMaDichVu.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.comBoxMaDichVu.Location = new System.Drawing.Point(150, 349);
+            this.comBoxMaDichVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comBoxMaDichVu.Name = "comBoxMaDichVu";
-            this.comBoxMaDichVu.Size = new System.Drawing.Size(135, 21);
+            this.comBoxMaDichVu.Size = new System.Drawing.Size(200, 28);
             this.comBoxMaDichVu.TabIndex = 4;
             this.comBoxMaDichVu.Text = "-Mã dịch vụ-";
             // 
@@ -167,9 +163,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnClear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnClear.BackColor = System.Drawing.SystemColors.Window;
             this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(18, 345);
+            this.btnClear.Location = new System.Drawing.Point(27, 531);
+            this.btnClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(217, 23);
+            this.btnClear.Size = new System.Drawing.Size(326, 35);
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "CLEAR";
             this.btnClear.UseVisualStyleBackColor = false;
@@ -180,9 +177,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnDelete.BackColor = System.Drawing.SystemColors.Window;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(160, 302);
+            this.btnDelete.Location = new System.Drawing.Point(240, 465);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(112, 35);
             this.btnDelete.TabIndex = 14;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -193,9 +191,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.btnSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnSave.BackColor = System.Drawing.SystemColors.Window;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(18, 302);
+            this.btnSave.Location = new System.Drawing.Point(27, 465);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.Size = new System.Drawing.Size(112, 35);
             this.btnSave.TabIndex = 13;
             this.btnSave.Text = "SAVE";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -203,10 +202,10 @@ namespace Quản_lý_Bán_vé_Máy_bay
             // 
             // NhapLoaiVe
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(100)))), ((int)(((byte)(112)))));
-            this.ClientSize = new System.Drawing.Size(604, 380);
+            this.ClientSize = new System.Drawing.Size(906, 585);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnSave);
@@ -219,7 +218,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 1, 2, 1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "NhapLoaiVe";
             this.Text = "Loại Vé";
             this.Load += new System.EventHandler(this.NhapLoaiVe_Load);

@@ -11,18 +11,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
 {
     public partial class NhapChuyenBay : Form
     {
-        //Option --> Designer --> Prevent..., sau đó vào .edmx --> Update Model...
-        //Insert and Update into one, change when click on DataGrid
-        //Mã không thay đổi với demo của thầy, nhưng phải đổi lúc update trong demo của tao
-        //Import - Export file excel
-        //https://www.c-sharpcorner.com/UploadFile/ankurmee/import-data-from-excel-to-datagridview-in-C-Sharp/
-        //==true ? Nam : Nữ
-        //Search with infomation (new Form)
-        //In report (2 loại Report View (làm cái này) vs Crystal Report)
-        //Chuyển sang dùng Dev Express (tìm bản crack)
-        //Entity Framework
-        //QuanLyVeMayBayEntities entities = new QuanLyVeMayBayEntities();
-        //Toggle Action Insert(true)-Update(false)
         private bool toggleAction = true;
         public NhapChuyenBay()
         {
@@ -39,6 +27,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 var query = context.Sân_bay
                                    .Select(sanBay => new 
                                    {
+                                       MaSanBay = sanBay.Mã_sân_bay,
                                        TenSanBay = sanBay.Tên_sân_bay
                                    })
                                    .ToList();
@@ -48,8 +37,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
 
                 foreach (var sanBay in query)
                 {
-                    comBoxMaSanBayDi.Items.Add(sanBay.TenSanBay.ToString());
-                    comBoxMaSanBayDen.Items.Add(sanBay.TenSanBay.ToString());
+                    comBoxMaSanBayDi.Items.Add(sanBay.MaSanBay.ToString());
+                    comBoxMaSanBayDen.Items.Add(sanBay.MaSanBay.ToString());
                 }
             };
 
@@ -86,8 +75,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
                                                         Số_lượng_chỗ_ngồi = e.Số_lượng_chỗ_ngồi,
                                                         Giờ_khởi_hành = e.Giờ_khởi_hành,
                                                         Ngày_khởi_hành = e.Ngày_khởi_hành,
-                                                        Mã_sân_bay_đi = e.Sân_bay.Tên_sân_bay,
-                                                        Mã_sân_bay_đến = e.Sân_bay1.Tên_sân_bay
+                                                        Mã_sân_bay_đi = e.Mã_sân_bay_đi,
+                                                        Mã_sân_bay_đến = e.Mã_sân_bay_đến
                                                   })
                                                   .OrderBy(e => new { e.Ngày_khởi_hành, e.Giờ_khởi_hành })
                                                   .ToList();

@@ -12,9 +12,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
 {
     public partial class NhapVe : Form
     {
-        //Entity Framework
-        //QuanLyVeMayBayEntities entities = new QuanLyVeMayBayEntities();
-        //Toggle Action Insert(true)-Update(false)
         private bool toggleAction = true;
 
         public NhapVe()
@@ -108,8 +105,8 @@ namespace Quản_lý_Bán_vé_Máy_bay
                                                Ngày_đặt_vé = e.Ngày_đặt_vé,
                                                Ngày_nhận_vé = e.Ngày_nhận_vé,
                                                Mã_chuyến_bay = e.Mã_chuyến_bay,
-                                               Mã_loại_vé = e.Loại_vé.Tên_loại_vé,
-                                               Mã_khách = e.Khách.Tên_khách
+                                               Mã_loại_vé = e.Loại_vé.Mã_loại_vé,
+                                               Mã_khách = e.Khách.Mã_khách
                                            })
                                            .OrderBy(e => e.Ngày_đặt_vé)
                                            .ToList();
@@ -125,12 +122,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 veData.Columns["Mã_chuyến_bay"].HeaderText = "Mã chuyến bay";
                 veData.Columns["Mã_loại_vé"].HeaderText = "Tên loại vé";
                 veData.Columns["Mã_khách"].HeaderText = "Tên khách";
-
-                //veData.Columns["Chuyến_bay"].Visible = false;
-                //veData.Columns["Khách"].Visible = false;
-                //veData.Columns["Loại_vé"].Visible = false;
-
-                //veData.Sort(veData.Columns["Ngày_đặt_vé"], ListSortDirection.Ascending);
             }
         }
 

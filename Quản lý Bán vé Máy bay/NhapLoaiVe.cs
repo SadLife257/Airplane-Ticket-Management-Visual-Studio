@@ -11,9 +11,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
 {
     public partial class NhapLoaiVe : Form
     {
-        //Entity Framework
-        //QuanLyVeMayBayEntities entities = new QuanLyVeMayBayEntities();
-        //Toggle Action Insert(true)-Update(false)
         private bool toggleAction = true;
 
         public NhapLoaiVe()
@@ -74,7 +71,7 @@ namespace Quản_lý_Bán_vé_Máy_bay
                                                    Mã_loại_vé = e.Mã_loại_vé,
                                                    Tên_loại_vé = e.Tên_loại_vé,
                                                    Giá_tiền = e.Giá_tiền,
-                                                   Mã_dịch_vụ = e.Dịch_vụ.Tên_dịch_vụ
+                                                   Mã_dịch_vụ = e.Dịch_vụ.Mã_dịch_vụ
                                                })
                                                .OrderBy(e => e.Tên_loại_vé)
                                                .ToList();
@@ -83,11 +80,6 @@ namespace Quản_lý_Bán_vé_Máy_bay
                 loaiVeData.Columns["Tên_loại_vé"].HeaderText = "Tên loại vé";
                 loaiVeData.Columns["Giá_tiền"].HeaderText = "Giá tiền";
                 loaiVeData.Columns["Mã_dịch_vụ"].HeaderText = "Tên dịch vụ";
-
-                //loaiVeData.Sort(loaiVeData.Columns["Tên_loại_vé"], ListSortDirection.Descending);
-
-                //loaiVeData.Columns["Dịch_vụ"].Visible = false;
-                //loaiVeData.Columns["Vé"].Visible = false;
             }
         }
 
